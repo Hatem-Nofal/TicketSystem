@@ -1,0 +1,15 @@
+E:\Work\tabaly Task\TicketSystem.Core\bin\Debug\net7.0\TicketSystem.Domain.deps.json
+E:\Work\tabaly Task\TicketSystem.Core\bin\Debug\net7.0\TicketSystem.Domain.dll
+E:\Work\tabaly Task\TicketSystem.Core\bin\Debug\net7.0\TicketSystem.Domain.pdb
+E:\Work\tabaly Task\TicketSystem.Core\bin\Debug\net7.0\TicketSystem.Infrastructure.dll
+E:\Work\tabaly Task\TicketSystem.Core\bin\Debug\net7.0\TicketSystem.Infrastructure.pdb
+E:\Work\tabaly Task\TicketSystem.Core\obj\Debug\net7.0\TicketSystem.Domain.csproj.AssemblyReference.cache
+E:\Work\tabaly Task\TicketSystem.Core\obj\Debug\net7.0\TicketSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\tabaly Task\TicketSystem.Core\obj\Debug\net7.0\TicketSystem.Domain.AssemblyInfoInputs.cache
+E:\Work\tabaly Task\TicketSystem.Core\obj\Debug\net7.0\TicketSystem.Domain.AssemblyInfo.cs
+E:\Work\tabaly Task\TicketSystem.Core\obj\Debug\net7.0\TicketSystem.Domain.csproj.CoreCompileInputs.cache
+E:\Work\tabaly Task\TicketSystem.Core\obj\Debug\net7.0\TicketSystem.Domain.csproj.CopyComplete
+E:\Work\tabaly Task\TicketSystem.Core\obj\Debug\net7.0\TicketSystem.Domain.dll
+E:\Work\tabaly Task\TicketSystem.Core\obj\Debug\net7.0\refint\TicketSystem.Domain.dll
+E:\Work\tabaly Task\TicketSystem.Core\obj\Debug\net7.0\TicketSystem.Domain.pdb
+E:\Work\tabaly Task\TicketSystem.Core\obj\Debug\net7.0\ref\TicketSystem.Domain.dll

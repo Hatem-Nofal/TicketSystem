@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "f9JJpJ2IzIlXy96TZ+u4I6pe3yoREZmTSwPtmY3f0Z83VBLvk0iyBa0ZwDmxsnB1zF8dezGDqXMHtWsJEtbDZQ==",
+  "success": true,
+  "projectFilePath": "E:\\Work\\tabaly Task\\TicketSystem.Infrastructure\\TicketSystem.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

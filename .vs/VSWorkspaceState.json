@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\TicketSystem.Application",
+    "\\TicketSystem.Core",
+    "\\TicketSystem.Infrastructure",
+    "\\TicketSystem.Tests",
+    "\\TicketSystem.WebApi"
+  ],
+  "SelectedNode": "\\TicketSystem.sln",
+  "PreviewInSolutionExplorer": false
+}
