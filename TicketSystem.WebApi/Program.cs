@@ -1,5 +1,8 @@
- 
 
+
+
+using Serilog;
+using TicketSystem.WebApi;
 
 public class Program
 {
@@ -7,16 +10,16 @@ public class Program
     {
         try
         {
-            //Log.Information("Transaction Api started ...");
+            Log.Information("Transaction Api started ...");
             CreateHostBuilder(args).Build().Run();
         }
         catch (Exception ex)
         {
-           // Log.Error(ex, "Transaction Api failed to start ...");
+            Log.Error(ex, "Transaction Api failed to start ...");
         }
         finally
         {
-            //Log.CloseAndFlush();
+           Log.CloseAndFlush();
         }
 
     }
@@ -26,18 +29,18 @@ public class Program
          .ConfigureLogging(logging =>
          {
              logging.ClearProviders(); // remove any existing logging providers
-         });
-        //.UseSerilog(SeriLogger.Configure)
-        //    .ConfigureWebHostDefaults(webBuilder =>
-        //    {
-        //        webBuilder.UseStartup<Startup>();
-        //        webBuilder.ConfigureLogging((ctx, logging) =>
-        //        {
+         })
+        .UseSerilog(SeriLogger.Configure)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+        webBuilder.UseStartup<Startup>();
+        webBuilder.ConfigureLogging((ctx, logging) =>
+        {
 
-        //            logging.AddEventLog(options =>
-        //            {
-        //                options.SourceName = "TransactionAPI";
-        //            });
-        //        });
-        //    });
+            logging.AddEventLog(options =>
+            {
+                options.SourceName = "TicketSystem";
+            });
+        });
+    });
 }

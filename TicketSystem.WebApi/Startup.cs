@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using FluentValidation;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Http.Features;
@@ -45,23 +46,31 @@ namespace TicketSystem.WebApi
                         .AllowAnyOrigin();
                 });
             });
-
-     
- 
-            // Adding MediatR for Domain Events and Notifications
             services.AddMediatR(typeof(Startup));
 
-            // .NET Native DI Abstraction
+            var presentationAssembly = Presentation.AssemblyReferenceHelper.GetAssembly();
+            //var presentationAssembly = typeof(x).Assembly;
+            services.AddControllers().AddApplicationPart(presentationAssembly);
+
+            //var applicationAsAmbly = Application.AssemblyReferenceHelper.GetAssembly();
+
+            //services.AddMediatR(applicationAsAmbly);
+
             services.AddDependencyInjectionConfiguration(_configuration);
- 
 
-      
- 
- 
-           
-            
 
-         }
+   
+
+            // .NET Native DI Abstraction
+
+
+
+
+
+
+
+
+        }
 
 
 
@@ -80,17 +89,17 @@ namespace TicketSystem.WebApi
                 app.UseSwaggerUI();
             }
 
-          
 
-        
+
+
 
 
 
 
 
         }
- 
- 
+
+
 
     }
 }

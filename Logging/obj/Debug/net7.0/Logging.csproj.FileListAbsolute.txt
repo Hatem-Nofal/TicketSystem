@@ -1,0 +1,12 @@
+E:\Work\tabaly Task\Logging\obj\Debug\net7.0\Logging.csproj.AssemblyReference.cache
+E:\Work\tabaly Task\Logging\obj\Debug\net7.0\Logging.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\tabaly Task\Logging\obj\Debug\net7.0\Logging.AssemblyInfoInputs.cache
+E:\Work\tabaly Task\Logging\obj\Debug\net7.0\Logging.AssemblyInfo.cs
+E:\Work\tabaly Task\Logging\obj\Debug\net7.0\Logging.csproj.CoreCompileInputs.cache
+E:\Work\tabaly Task\Logging\bin\Debug\net7.0\Logging.deps.json
+E:\Work\tabaly Task\Logging\bin\Debug\net7.0\Logging.dll
+E:\Work\tabaly Task\Logging\bin\Debug\net7.0\Logging.pdb
+E:\Work\tabaly Task\Logging\obj\Debug\net7.0\Logging.dll
+E:\Work\tabaly Task\Logging\obj\Debug\net7.0\refint\Logging.dll
+E:\Work\tabaly Task\Logging\obj\Debug\net7.0\Logging.pdb
+E:\Work\tabaly Task\Logging\obj\Debug\net7.0\ref\Logging.dll
