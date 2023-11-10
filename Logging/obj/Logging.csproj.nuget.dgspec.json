@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Work\\tabaly Task\\Logging\\Logging.csproj": {}
+    "C:\\work\\TicketSystem\\Logging\\Logging.csproj": {}
   },
   "projects": {
-    "E:\\Work\\tabaly Task\\Logging\\Logging.csproj": {
+    "C:\\work\\TicketSystem\\Logging\\Logging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Work\\tabaly Task\\Logging\\Logging.csproj",
+        "projectUniqueName": "C:\\work\\TicketSystem\\Logging\\Logging.csproj",
         "projectName": "Logging",
-        "projectPath": "E:\\Work\\tabaly Task\\Logging\\Logging.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "E:\\Work\\tabaly Task\\Logging\\obj\\",
+        "projectPath": "C:\\work\\TicketSystem\\Logging\\Logging.csproj",
+        "packagesPath": "C:\\Users\\engha\\.nuget\\packages\\",
+        "outputPath": "C:\\work\\TicketSystem\\Logging\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\engha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://pkgs.dev.azure.com/ExcelSystems/_packaging/ExcelSystemsNuget/nuget/v3/index.json": {}
         },
@@ -111,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

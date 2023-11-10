@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "LT76JuOwRwsq9W4rD45N/HXBB4x0hPS1Gp6aJXMvc9GbrOi0C3/n8RjKFPEkCVQJ3wljTzEjHkenrU7vplNyDw==",
+  "dgSpecHash": "+Bu+Di2uderNVj3XbPXtPtdBN2htdFbxnUSn0XdXe3IulgI/9FnnmdmZMCvjMGeTJa4NTvKHHRtFY51BVSUneA==",
   "success": true,
-  "projectFilePath": "E:\\Work\\tabaly Task\\TicketSystem.Core\\TicketSystem.Domain.csproj",
+  "projectFilePath": "C:\\work\\TicketSystem\\TicketSystem.Core\\TicketSystem.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+    "C:\\Users\\engha\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\engha\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\engha\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\engha\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

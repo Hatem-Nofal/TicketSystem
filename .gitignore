@@ -170,7 +170,7 @@ csx/
 # Microsoft Azure Emulator
 ecf/
 rcf/
-
+obj/
 # Windows Store app package directories and files
 AppPackages/
 BundleArtifacts/
@@ -181,7 +181,7 @@ _pkginfo.txt
 # files ending in .cache can be ignored
 *.[Cc]ache
 # but keep track of directories ending in .cache
-!*.[Cc]ache/
+*.[Cc]ache/
 
 # Others
 ClientBin/
@@ -252,3 +252,4 @@ paket-files/
 .idea/
 *.sln.iml
 /Logging/obj/Debug/net7.0/Logging.assets.cache
+*.cache
