@@ -1,0 +1,178 @@
+[22:30:20 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[22:30:20 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[22:30:20 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[22:30:20 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger - -
+[22:30:20 ERR] (Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer) Connection ID ""18302628904424177671"", Request ID ""80000008-0004-fe00-b63f-84710c7967bb"": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware.Invoke(HttpContext context)
+   at Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware.ExecuteWithFilterAsync(IHttpSocketAdapter injectScriptSocket, String requestId, HttpContext httpContext)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+[22:30:20 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger - - - 500 - - 108.8596ms
+[22:30:52 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[22:30:52 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[22:30:52 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[22:30:52 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger - -
+[22:30:52 ERR] (Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer) Connection ID ""18230571293206380566"", Request ID ""80000017-0000-fd00-b63f-84710c7967bb"": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware.Invoke(HttpContext context)
+   at Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware.ExecuteWithFilterAsync(IHttpSocketAdapter injectScriptSocket, String requestId, HttpContext httpContext)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+[22:30:52 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger - - - 500 - - 41.2438ms
+[22:31:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/index.html - -
+[22:31:06 ERR] (Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer) Connection ID ""18230571301796315139"", Request ID ""80000004-0002-fd00-b63f-84710c7967bb"": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware.Invoke(HttpContext context)
+   at Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware.ExecuteWithFilterAsync(IHttpSocketAdapter injectScriptSocket, String requestId, HttpContext httpContext)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+[22:31:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/index.html - - - 500 - - 1.9668ms
+[22:31:09 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/index.html - -
+[22:31:09 ERR] (Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer) Connection ID ""18086456139490263045"", Request ID ""80000006-0008-fb00-b63f-84710c7967bb"": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware.Invoke(HttpContext context)
+   at Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware.ExecuteWithFilterAsync(IHttpSocketAdapter injectScriptSocket, String requestId, HttpContext httpContext)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+[22:31:09 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/index.html - - - 500 - - 1.3141ms
+[22:37:49 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[22:37:49 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[22:37:49 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[22:37:49 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger - -
+[22:37:49 ERR] (Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer) Connection ID ""18374686507052040216"", Request ID ""80000019-0006-ff00-b63f-84710c7967bb"": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware.Invoke(HttpContext context)
+   at Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware.ExecuteWithFilterAsync(IHttpSocketAdapter injectScriptSocket, String requestId, HttpContext httpContext)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+[22:37:49 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger - - - 500 - - 42.7840ms
+[22:41:06 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[22:41:06 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[22:41:06 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[22:41:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger - -
+[22:41:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/index.html - -
+[22:41:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger - - - 301 - - 159.1859ms
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/index.html - - - 200 - text/html;charset=utf-8 270.4019ms
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/swagger-ui.css - -
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/swagger-ui-bundle.js - -
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/swagger-ui-standalone-preset.js - -
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/_framework/aspnetcore-browser-refresh.js - -
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/_framework/aspnetcore-browser-refresh.js - - - 200 12370 application/javascript;+charset=utf-8 2.2353ms
+[22:41:07 INF] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware) Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/swagger-ui.css - - - 200 144929 text/css 32.5183ms
+[22:41:07 INF] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware) Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/swagger-ui-standalone-preset.js - - - 200 312163 text/javascript 39.9632ms
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/_vs/browserLink - -
+[22:41:07 INF] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware) Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/swagger-ui-bundle.js - - - 200 1061536 text/javascript 69.3911ms
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 62.9117ms
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/v1/swagger.json - -
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/favicon-32x32.png - -
+[22:41:07 INF] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware) Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"'
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/favicon-32x32.png - - - 200 628 image/png 0.8519ms
+[22:41:07 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 144.5616ms
+[22:41:13 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/WeatherForecast - -
+[22:41:13 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/WeatherForecast - - - 404 - - 0.8263ms
+[22:41:37 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/WeatherForecast - -
+[22:41:37 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/WeatherForecast - - - 404 - - 4.1921ms
+[22:42:17 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/WeatherForecast - -
+[22:42:17 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/WeatherForecast - - - 404 - - 5.0077ms
+[22:42:35 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/WeatherForecast - -
+[22:42:35 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/WeatherForecast - - - 404 - - 0.5752ms
+[22:43:59 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[22:43:59 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[22:43:59 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[22:43:59 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/index.html - -
+[22:43:59 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/_framework/aspnetcore-browser-refresh.js - -
+[22:43:59 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/index.html - - - 200 - text/html;charset=utf-8 168.1776ms
+[22:43:59 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/_framework/aspnetcore-browser-refresh.js - - - 200 12370 application/javascript;+charset=utf-8 2.1752ms
+[22:43:59 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/_vs/browserLink - -
+[22:43:59 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 13.1765ms
+[22:44:00 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/v1/swagger.json - -
+[22:44:00 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 77.0125ms
+[22:44:03 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/WeatherForecast - -
+[22:44:03 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/WeatherForecast - - - 404 - - 1.8028ms
+[22:48:47 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[22:48:47 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[22:48:47 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[22:48:47 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/index.html - -
+[22:49:40 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[22:49:40 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[22:49:40 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[22:49:40 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/index.html - -
+[22:50:16 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[22:50:16 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[22:50:16 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[22:50:16 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/index.html - -
+[22:51:38 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[22:51:38 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[22:51:38 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[22:51:38 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/index.html - -
+[22:52:19 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[22:52:19 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[22:52:19 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[22:52:19 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/index.html - -
+[22:54:18 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[22:54:18 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[22:54:18 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[22:54:18 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/index.html - -
+[23:02:39 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[23:02:39 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[23:02:39 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[23:02:39 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/index.html - -
+[23:02:39 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/index.html - - - 200 - text/html;charset=utf-8 183.4831ms
+[23:02:39 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/_framework/aspnetcore-browser-refresh.js - -
+[23:02:39 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/_vs/browserLink - -
+[23:02:39 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/_framework/aspnetcore-browser-refresh.js - - - 200 12370 application/javascript;+charset=utf-8 9.1100ms
+[23:02:39 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.5070ms
+[23:02:40 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/v1/swagger.json - -
+[23:02:40 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/v1/swagger.json - - - 404 - - 5.1616ms
+[23:03:06 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[23:03:06 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[23:03:06 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[23:03:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/index.html - -
+[23:03:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/index.html - - - 200 - text/html;charset=utf-8 159.6059ms
+[23:03:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/_framework/aspnetcore-browser-refresh.js - -
+[23:03:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/_vs/browserLink - -
+[23:03:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/_framework/aspnetcore-browser-refresh.js - - - 200 12370 application/javascript;+charset=utf-8 6.8308ms
+[23:03:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 33.6361ms
+[23:03:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/v1/swagger.json - -
+[23:03:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/v1/swagger.json - - - 404 - - 7.3358ms
+[23:08:05 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[23:08:05 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[23:08:05 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[23:08:05 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/index.html - -
+[23:08:05 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/_framework/aspnetcore-browser-refresh.js - -
+[23:08:05 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/index.html - - - 200 - text/html;charset=utf-8 148.9367ms
+[23:08:05 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/_framework/aspnetcore-browser-refresh.js - - - 200 12370 application/javascript;+charset=utf-8 2.3627ms
+[23:08:05 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/_vs/browserLink - -
+[23:08:05 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 13.2451ms
+[23:08:05 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/v1/swagger.json - -
+[23:08:05 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 58.4961ms
+[23:08:11 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/WeatherForecast - -
+[23:08:11 INF] (Microsoft.AspNetCore.Routing.EndpointMiddleware) Executing endpoint '"TicketSystem.Presentation.Controllers.WeatherForecastController.Get (TicketSystem.Presentation)"'
+[23:08:11 INF] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker) Route matched with "{action = \"Get\", controller = \"WeatherForecast\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[TicketSystem.Presentation.Controllers.WeatherForecast] Get()" on controller "TicketSystem.Presentation.Controllers.WeatherForecastController" ("TicketSystem.Presentation").
+[23:08:11 INF] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker) Executing action method "TicketSystem.Presentation.Controllers.WeatherForecastController.Get (TicketSystem.Presentation)" - Validation state: Valid
+[23:08:14 INF] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker) Executed action method "TicketSystem.Presentation.Controllers.WeatherForecastController.Get (TicketSystem.Presentation)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3245.9413ms.
+[23:08:14 INF] (Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor) Executing "ObjectResult", writing value of type '"TicketSystem.Presentation.Controllers.WeatherForecast[]"'.
+[23:08:14 INF] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker) Executed action "TicketSystem.Presentation.Controllers.WeatherForecastController.Get (TicketSystem.Presentation)" in 3368.3729ms
+[23:08:14 INF] (Microsoft.AspNetCore.Routing.EndpointMiddleware) Executed endpoint '"TicketSystem.Presentation.Controllers.WeatherForecastController.Get (TicketSystem.Presentation)"'
+[23:08:14 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/WeatherForecast - - - 200 - application/json;+charset=utf-8 3397.0356ms
+[23:08:54 INF] (Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider) No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+[23:08:54 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[23:08:54 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[23:08:54 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[23:08:54 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/index.html - -
+[23:08:54 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/_framework/aspnetcore-browser-refresh.js - -
+[23:08:54 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/index.html - - - 200 - text/html;charset=utf-8 153.9160ms
+[23:08:54 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/_framework/aspnetcore-browser-refresh.js - - - 200 12370 application/javascript;+charset=utf-8 2.1060ms
+[23:08:55 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/_vs/browserLink - -
+[23:08:55 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.4677ms
+[23:08:55 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting HTTP/2 GET https://localhost:44374/swagger/v1/swagger.json - -
+[23:08:55 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished HTTP/2 GET https://localhost:44374/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 15.4882ms
