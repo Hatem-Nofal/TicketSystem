@@ -19,7 +19,7 @@ public class Program
         }
         finally
         {
-           Log.CloseAndFlush();
+            Log.CloseAndFlush();
         }
 
     }
@@ -33,14 +33,14 @@ public class Program
         .UseSerilog(SeriLogger.Configure)
             .ConfigureWebHostDefaults(webBuilder =>
             {
-        webBuilder.UseStartup<Startup>();
-        webBuilder.ConfigureLogging((ctx, logging) =>
-        {
+                webBuilder.UseStartup<Startup>();
+                webBuilder.ConfigureLogging((ctx, logging) =>
+                {
 
-            logging.AddEventLog(options =>
-            {
-                options.SourceName = "TicketSystem";
+                    logging.AddEventLog(options =>
+                    {
+                        options.SourceName = "TicketSystem";
+                    });
+                });
             });
-        });
-    });
 }

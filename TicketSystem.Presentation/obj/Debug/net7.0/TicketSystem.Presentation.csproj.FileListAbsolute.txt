@@ -17,3 +17,5 @@ E:\Work\tabaly Task\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Pres
 E:\Work\tabaly Task\TicketSystem.Presentation\obj\Debug\net7.0\refint\TicketSystem.Presentation.dll
 E:\Work\tabaly Task\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Presentation.pdb
 E:\Work\tabaly Task\TicketSystem.Presentation\obj\Debug\net7.0\ref\TicketSystem.Presentation.dll
+E:\Work\tabaly Task\TicketSystem.Presentation\bin\Debug\net7.0\TicketSystem.Presentation.xml
+E:\Work\tabaly Task\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Presentation.xml

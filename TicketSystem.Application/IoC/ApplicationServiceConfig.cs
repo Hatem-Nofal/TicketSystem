@@ -16,11 +16,10 @@ namespace TicketSystem.Application.IoC
         {
             ////AutoMapper
             //services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            var assembly= Assembly.GetExecutingAssembly();
-            // Application
-            services.AddMediatR(assembly);
+             // Application
+           // services.AddMediatR(assembly);
  
-            services.AddValidatorsFromAssembly(assembly);
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             return services;
 
         }
