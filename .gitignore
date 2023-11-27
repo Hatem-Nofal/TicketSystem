@@ -251,11 +251,9 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
-/Logging/obj/Debug/net7.0/Logging.assets.cache
 *.cache
 /obj
 /.vs
-/.vs/TicketSystem/v17/.suo
 /Logs
-/TicketSystem.IdentityServer/Logs/Log-20231127.txt
-/.vs/TicketSystem/DesignTimeBuild/.dtbcache.v2
+/Logs
+/.vs
