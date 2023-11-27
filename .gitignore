@@ -256,3 +256,5 @@ paket-files/
 /obj
 /.vs
 /.vs/TicketSystem/v17/.suo
+/Logs
+/TicketSystem.IdentityServer/Logs/Log-20231127.txt
