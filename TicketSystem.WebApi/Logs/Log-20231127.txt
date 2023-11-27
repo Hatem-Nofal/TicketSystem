@@ -1,0 +1,106 @@
+[23:35:33 INF] (Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider) No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+[23:35:33 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[23:35:33 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[23:35:33 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[23:35:33 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - null null
+[23:35:33 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 169.8969ms
+[23:35:33 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/swagger-ui-bundle.js""" - null null
+[23:35:33 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/swagger-ui.css""" - null null
+[23:35:33 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/swagger-ui-standalone-preset.js""" - null null
+[23:35:33 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - null null
+[23:35:33 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - null null
+[23:35:33 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - 200 13774 "application/javascript; charset=utf-8" 20.0709ms
+[23:35:33 INF] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware) Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+[23:35:33 INF] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware) Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+[23:35:33 INF] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware) Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+[23:35:33 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/swagger-ui.css""" - 200 144929 "text/css" 53.2962ms
+[23:35:33 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/swagger-ui-standalone-preset.js""" - 200 312163 "text/javascript" 48.003ms
+[23:35:33 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/swagger-ui-bundle.js""" - 200 1061536 "text/javascript" 68.7358ms
+[23:35:36 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 2575.3006ms
+[23:35:36 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/v1/swagger.json""" - null null
+[23:35:36 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/favicon-32x32.png""" - null null
+[23:35:36 INF] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware) Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"'
+[23:35:36 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 14.5983ms
+[23:35:36 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/favicon-32x32.png""" - 200 628 "image/png" 1.0221ms
+[23:48:41 INF] (Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider) No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+[23:48:41 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[23:48:41 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[23:48:41 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[23:48:41 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - null null
+[23:48:42 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 201.4927ms
+[23:48:42 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - null null
+[23:48:42 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - 200 13774 "application/javascript; charset=utf-8" 1.8698ms
+[23:48:42 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - null null
+[23:48:42 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 32.0194ms
+[23:48:42 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/v1/swagger.json""" - null null
+[23:48:42 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 17.7271ms
+[23:50:36 INF] (Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider) No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+[23:50:36 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[23:50:36 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[23:50:36 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[23:50:36 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - null null
+[23:50:36 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 157.8285ms
+[23:50:36 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - null null
+[23:50:36 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - null null
+[23:50:36 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - 200 13774 "application/javascript; charset=utf-8" 2.2659ms
+[23:50:36 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 32.6739ms
+[23:50:36 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/v1/swagger.json""" - null null
+[23:50:36 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 11.5446ms
+[23:51:47 INF] (Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider) No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+[23:51:47 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[23:51:47 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[23:51:47 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[23:51:47 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - null null
+[23:51:47 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 173.0319ms
+[23:51:47 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - null null
+[23:51:47 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - null null
+[23:51:47 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - 200 13774 "application/javascript; charset=utf-8" 2.2169ms
+[23:51:47 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 19.8521ms
+[23:51:47 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/v1/swagger.json""" - null null
+[23:51:47 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 11.885ms
+[00:00:52 INF] (Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider) No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+[00:00:52 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[00:00:52 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[00:00:52 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[00:00:52 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - null null
+[00:00:52 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 174.5381ms
+[00:00:54 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - null null
+[00:00:54 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - null null
+[00:00:54 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - 200 13774 "application/javascript; charset=utf-8" 5.0936ms
+[00:00:54 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 32.4359ms
+[00:00:54 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/v1/swagger.json""" - null null
+[00:00:54 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 11.7498ms
+[00:02:04 INF] (Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider) No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+[00:02:04 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[00:02:04 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[00:02:04 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[00:02:04 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - null null
+[00:02:26 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 22812.6762ms
+[00:05:15 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - null null
+[00:05:15 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - null null
+[00:05:15 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - 200 13774 "application/javascript; charset=utf-8" 6.6939ms
+[00:05:15 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 64.7889ms
+[00:08:37 INF] (Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider) No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+[00:08:37 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[00:08:37 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[00:08:37 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[00:08:37 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - null null
+[00:08:37 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 147.7369ms
+[00:08:37 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - null null
+[00:08:37 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - null null
+[00:08:37 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - 200 13774 "application/javascript; charset=utf-8" 5.2668ms
+[00:08:37 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 22.8022ms
+[00:08:37 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/v1/swagger.json""" - null null
+[00:08:37 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 12.4462ms
+[00:11:02 INF] (Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider) No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+[00:11:02 INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+[00:11:02 INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+[00:11:02 INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Work\tabaly Task\TicketSystem.WebApi"
+[00:11:02 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - null null
+[00:11:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 3743.4565ms
+[00:11:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - null null
+[00:11:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - null null
+[00:11:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_framework/aspnetcore-browser-refresh.js""" - 200 13774 "application/javascript; charset=utf-8" 2.4156ms
+[00:11:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 27.4915ms
+[00:11:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request starting "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/v1/swagger.json""" - null null
+[00:11:06 INF] (Microsoft.AspNetCore.Hosting.Diagnostics) Request finished "HTTP/2" "GET" "https"://"localhost:44374""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 10.7631ms
