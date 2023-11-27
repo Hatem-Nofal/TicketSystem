@@ -254,3 +254,5 @@ paket-files/
 /Logging/obj/Debug/net7.0/Logging.assets.cache
 *.cache
 /obj
+/.vs
+/.vs/TicketSystem/v17/.suo
