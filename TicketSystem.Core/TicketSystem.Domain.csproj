@@ -14,6 +14,8 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Entities\" />
     <Folder Include="Expectations\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Expectations\" />
   </ItemGroup>
 
 </Project>

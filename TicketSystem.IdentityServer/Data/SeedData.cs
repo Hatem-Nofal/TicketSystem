@@ -64,16 +64,16 @@ namespace Server
         {
             var userMgr = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
 
-            var angella = userMgr.FindByNameAsync("admin").Result;
-            if (angella == null)
+            var admin = userMgr.FindByNameAsync("admin").Result;
+            if (admin == null)
             {
-                angella = new IdentityUser
+                admin = new IdentityUser
                 {
                     UserName = "admin",
                     Email = "admin@gmail.com",
                     EmailConfirmed = true
                 };
-                var result = userMgr.CreateAsync(angella, "Pass123$").Result;
+                var result = userMgr.CreateAsync(admin, "Pass123$").Result;
                 if (!result.Succeeded)
                 {
                     throw new Exception(result.Errors.First().Description);
@@ -81,7 +81,7 @@ namespace Server
 
                 result =
                     userMgr.AddClaimsAsync(
-                        angella,
+                        admin,
                         new Claim[]
                         {
                             new Claim(JwtClaimTypes.Name, "Admin"),
