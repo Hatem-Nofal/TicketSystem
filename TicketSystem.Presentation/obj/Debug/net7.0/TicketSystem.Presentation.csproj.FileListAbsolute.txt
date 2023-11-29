@@ -19,3 +19,25 @@ E:\Work\tabaly Task\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Pres
 E:\Work\tabaly Task\TicketSystem.Presentation\obj\Debug\net7.0\ref\TicketSystem.Presentation.dll
 E:\Work\tabaly Task\TicketSystem.Presentation\bin\Debug\net7.0\TicketSystem.Presentation.xml
 E:\Work\tabaly Task\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Presentation.xml
+C:\work\TicketSystem\TicketSystem.Presentation\bin\Debug\net7.0\TicketSystem.Presentation.deps.json
+C:\work\TicketSystem\TicketSystem.Presentation\bin\Debug\net7.0\TicketSystem.Presentation.dll
+C:\work\TicketSystem\TicketSystem.Presentation\bin\Debug\net7.0\TicketSystem.Presentation.pdb
+C:\work\TicketSystem\TicketSystem.Presentation\bin\Debug\net7.0\TicketSystem.Presentation.xml
+C:\work\TicketSystem\TicketSystem.Presentation\bin\Debug\net7.0\TicketSystem.Application.dll
+C:\work\TicketSystem\TicketSystem.Presentation\bin\Debug\net7.0\TicketSystem.Domain.dll
+C:\work\TicketSystem\TicketSystem.Presentation\bin\Debug\net7.0\TicketSystem.Infrastructure.dll
+C:\work\TicketSystem\TicketSystem.Presentation\bin\Debug\net7.0\TicketSystem.Application.pdb
+C:\work\TicketSystem\TicketSystem.Presentation\bin\Debug\net7.0\TicketSystem.Domain.pdb
+C:\work\TicketSystem\TicketSystem.Presentation\bin\Debug\net7.0\TicketSystem.Infrastructure.pdb
+C:\work\TicketSystem\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Presentation.csproj.AssemblyReference.cache
+C:\work\TicketSystem\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+C:\work\TicketSystem\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Presentation.AssemblyInfoInputs.cache
+C:\work\TicketSystem\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Presentation.AssemblyInfo.cs
+C:\work\TicketSystem\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Presentation.csproj.CoreCompileInputs.cache
+C:\work\TicketSystem\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Presentation.sourcelink.json
+C:\work\TicketSystem\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Presentation.csproj.CopyComplete
+C:\work\TicketSystem\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Presentation.dll
+C:\work\TicketSystem\TicketSystem.Presentation\obj\Debug\net7.0\refint\TicketSystem.Presentation.dll
+C:\work\TicketSystem\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Presentation.xml
+C:\work\TicketSystem\TicketSystem.Presentation\obj\Debug\net7.0\TicketSystem.Presentation.pdb
+C:\work\TicketSystem\TicketSystem.Presentation\obj\Debug\net7.0\ref\TicketSystem.Presentation.dll

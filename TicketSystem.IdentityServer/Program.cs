@@ -12,7 +12,7 @@ public class Program
     {
         try
         {
-            Log.Information("Transaction Api started ...");
+            Log.Information("IdentityServer started ...");
         
 
 
@@ -22,7 +22,7 @@ public class Program
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Transaction Api failed to start ...");
+            Log.Error(ex, "IdentityServer failed to start ...");
         }
         finally
         {

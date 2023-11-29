@@ -15,3 +15,21 @@ E:\Work\tabaly Task\TicketSystem.Application\obj\Debug\net7.0\TicketSystem.Appli
 E:\Work\tabaly Task\TicketSystem.Application\obj\Debug\net7.0\refint\TicketSystem.Application.dll
 E:\Work\tabaly Task\TicketSystem.Application\obj\Debug\net7.0\TicketSystem.Application.pdb
 E:\Work\tabaly Task\TicketSystem.Application\obj\Debug\net7.0\ref\TicketSystem.Application.dll
+C:\work\TicketSystem\TicketSystem.Application\bin\Debug\net7.0\TicketSystem.Application.deps.json
+C:\work\TicketSystem\TicketSystem.Application\bin\Debug\net7.0\TicketSystem.Application.dll
+C:\work\TicketSystem\TicketSystem.Application\bin\Debug\net7.0\TicketSystem.Application.pdb
+C:\work\TicketSystem\TicketSystem.Application\bin\Debug\net7.0\TicketSystem.Domain.dll
+C:\work\TicketSystem\TicketSystem.Application\bin\Debug\net7.0\TicketSystem.Infrastructure.dll
+C:\work\TicketSystem\TicketSystem.Application\bin\Debug\net7.0\TicketSystem.Domain.pdb
+C:\work\TicketSystem\TicketSystem.Application\bin\Debug\net7.0\TicketSystem.Infrastructure.pdb
+C:\work\TicketSystem\TicketSystem.Application\obj\Debug\net7.0\TicketSystem.Application.csproj.AssemblyReference.cache
+C:\work\TicketSystem\TicketSystem.Application\obj\Debug\net7.0\TicketSystem.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\work\TicketSystem\TicketSystem.Application\obj\Debug\net7.0\TicketSystem.Application.AssemblyInfoInputs.cache
+C:\work\TicketSystem\TicketSystem.Application\obj\Debug\net7.0\TicketSystem.Application.AssemblyInfo.cs
+C:\work\TicketSystem\TicketSystem.Application\obj\Debug\net7.0\TicketSystem.Application.csproj.CoreCompileInputs.cache
+C:\work\TicketSystem\TicketSystem.Application\obj\Debug\net7.0\TicketSystem.Application.sourcelink.json
+C:\work\TicketSystem\TicketSystem.Application\obj\Debug\net7.0\TicketSystem.Application.csproj.CopyComplete
+C:\work\TicketSystem\TicketSystem.Application\obj\Debug\net7.0\TicketSystem.Application.dll
+C:\work\TicketSystem\TicketSystem.Application\obj\Debug\net7.0\refint\TicketSystem.Application.dll
+C:\work\TicketSystem\TicketSystem.Application\obj\Debug\net7.0\TicketSystem.Application.pdb
+C:\work\TicketSystem\TicketSystem.Application\obj\Debug\net7.0\ref\TicketSystem.Application.dll

@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Server.Data;
 
 #nullable disable
 
-namespace TicketSystem.IdentityServer.Migrations
+namespace TicketSystem.IdentityServer.Migrations.AspNetIdentityDb
 {
     [DbContext(typeof(AspNetIdentityDbContext))]
-    partial class AspNetIdentityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231128134400_InitialMigration")]
+    partial class InitialMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

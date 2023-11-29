@@ -10,3 +10,16 @@ E:\Work\tabaly Task\Logging\obj\Debug\net7.0\Logging.dll
 E:\Work\tabaly Task\Logging\obj\Debug\net7.0\refint\Logging.dll
 E:\Work\tabaly Task\Logging\obj\Debug\net7.0\Logging.pdb
 E:\Work\tabaly Task\Logging\obj\Debug\net7.0\ref\Logging.dll
+C:\work\TicketSystem\Logging\bin\Debug\net7.0\Logging.deps.json
+C:\work\TicketSystem\Logging\bin\Debug\net7.0\Logging.dll
+C:\work\TicketSystem\Logging\bin\Debug\net7.0\Logging.pdb
+C:\work\TicketSystem\Logging\obj\Debug\net7.0\Logging.csproj.AssemblyReference.cache
+C:\work\TicketSystem\Logging\obj\Debug\net7.0\Logging.GeneratedMSBuildEditorConfig.editorconfig
+C:\work\TicketSystem\Logging\obj\Debug\net7.0\Logging.AssemblyInfoInputs.cache
+C:\work\TicketSystem\Logging\obj\Debug\net7.0\Logging.AssemblyInfo.cs
+C:\work\TicketSystem\Logging\obj\Debug\net7.0\Logging.csproj.CoreCompileInputs.cache
+C:\work\TicketSystem\Logging\obj\Debug\net7.0\Logging.sourcelink.json
+C:\work\TicketSystem\Logging\obj\Debug\net7.0\Logging.dll
+C:\work\TicketSystem\Logging\obj\Debug\net7.0\refint\Logging.dll
+C:\work\TicketSystem\Logging\obj\Debug\net7.0\Logging.pdb
+C:\work\TicketSystem\Logging\obj\Debug\net7.0\ref\Logging.dll

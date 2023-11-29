@@ -10,3 +10,16 @@ E:\Work\tabaly Task\TicketSystem.Infrastructure\obj\Debug\net7.0\TicketSystem.In
 E:\Work\tabaly Task\TicketSystem.Infrastructure\obj\Debug\net7.0\refint\TicketSystem.Infrastructure.dll
 E:\Work\tabaly Task\TicketSystem.Infrastructure\obj\Debug\net7.0\TicketSystem.Infrastructure.pdb
 E:\Work\tabaly Task\TicketSystem.Infrastructure\obj\Debug\net7.0\ref\TicketSystem.Infrastructure.dll
+C:\work\TicketSystem\TicketSystem.Infrastructure\bin\Debug\net7.0\TicketSystem.Infrastructure.deps.json
+C:\work\TicketSystem\TicketSystem.Infrastructure\bin\Debug\net7.0\TicketSystem.Infrastructure.dll
+C:\work\TicketSystem\TicketSystem.Infrastructure\bin\Debug\net7.0\TicketSystem.Infrastructure.pdb
+C:\work\TicketSystem\TicketSystem.Infrastructure\obj\Debug\net7.0\TicketSystem.Infrastructure.csproj.AssemblyReference.cache
+C:\work\TicketSystem\TicketSystem.Infrastructure\obj\Debug\net7.0\TicketSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\work\TicketSystem\TicketSystem.Infrastructure\obj\Debug\net7.0\TicketSystem.Infrastructure.AssemblyInfoInputs.cache
+C:\work\TicketSystem\TicketSystem.Infrastructure\obj\Debug\net7.0\TicketSystem.Infrastructure.AssemblyInfo.cs
+C:\work\TicketSystem\TicketSystem.Infrastructure\obj\Debug\net7.0\TicketSystem.Infrastructure.csproj.CoreCompileInputs.cache
+C:\work\TicketSystem\TicketSystem.Infrastructure\obj\Debug\net7.0\TicketSystem.Infrastructure.sourcelink.json
+C:\work\TicketSystem\TicketSystem.Infrastructure\obj\Debug\net7.0\TicketSystem.Infrastructure.dll
+C:\work\TicketSystem\TicketSystem.Infrastructure\obj\Debug\net7.0\refint\TicketSystem.Infrastructure.dll
+C:\work\TicketSystem\TicketSystem.Infrastructure\obj\Debug\net7.0\TicketSystem.Infrastructure.pdb
+C:\work\TicketSystem\TicketSystem.Infrastructure\obj\Debug\net7.0\ref\TicketSystem.Infrastructure.dll

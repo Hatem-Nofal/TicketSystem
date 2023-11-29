@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Server;
 using Server.Data;
 using static System.Net.Mime.MediaTypeNames;
+using IdentityServer4.EntityFramework.DbContexts;
 
 
 
@@ -41,7 +42,9 @@ public class Startup
 
         SeedData.EnsureSeedData(defaultConnString!);
         var assembly = typeof(Program).Assembly.GetName().Name;
-
+        services.AddDbContext<ConfigurationDbContext>(options =>
+options.UseSqlServer(defaultConnString,
+                b => b.MigrationsAssembly(assembly)));
         services.AddDbContext<AspNetIdentityDbContext>(options =>
             options.UseSqlServer(defaultConnString,
                 b => b.MigrationsAssembly(assembly)));
