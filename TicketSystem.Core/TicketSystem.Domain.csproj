@@ -11,12 +11,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Tickets\Enums\" />
-    <Folder Include="Tickets\Aggregate\" />
     <Folder Include="Tickets\Entities\" />
+    <Folder Include="Tickets\Enums\" />
     <Folder Include="Tickets\Inerfaces\" />
     <Folder Include="Tickets\Errors\" />
-    <Folder Include="Tickets\ValueObjects\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SequentialGuid" Version="4.0.4" />
   </ItemGroup>
 
 </Project>
