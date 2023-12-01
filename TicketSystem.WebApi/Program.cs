@@ -10,6 +10,7 @@ public class Program
     {
         try
         {
+
             Log.Information("Transaction Api started ...");
             CreateHostBuilder(args).Build().Run();
         }

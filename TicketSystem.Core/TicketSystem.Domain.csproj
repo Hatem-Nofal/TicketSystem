@@ -11,11 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Entities\" />
-    <Folder Include="Expectations\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Expectations\" />
+    <Folder Include="Tickets\Enums\" />
+    <Folder Include="Tickets\Aggregate\" />
+    <Folder Include="Tickets\Entities\" />
+    <Folder Include="Tickets\Inerfaces\" />
+    <Folder Include="Tickets\Errors\" />
+    <Folder Include="Tickets\ValueObjects\" />
   </ItemGroup>
 
 </Project>
