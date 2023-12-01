@@ -7,9 +7,10 @@ using TicketSystem.Domain.Common.Models;
 using TicketSystem.Domain.Tickets.ValueObjects;
 
 namespace TicketSystem.Domain.Tickets;
-public class Ticket : AggregateRoot<TicketId>
+public sealed class Ticket(TicketId id) : AggregateRoot<TicketId>(id)
 {
-    public Ticket(TicketId id) : base(id)
-    {
-    }
+    public string Title { get; set; }
+    public int Status { get; set; }
+    public Guid AssingTo { get; set; }
+    public string Describtion { get; set; }
 }

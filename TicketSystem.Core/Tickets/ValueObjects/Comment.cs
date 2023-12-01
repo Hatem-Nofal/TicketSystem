@@ -6,16 +6,11 @@ using System.Threading.Tasks;
 using TicketSystem.Domain.Common.Models.ValueObjects;
 
 namespace TicketSystem.Domain.Tickets.ValueObjects;
-public sealed class TicketId : ValueObject
+public sealed class Comment : ValueObject
 {
-    public Guid Value { get;   }
+    public string Body { get; set; }
+    public TicketId TicketId { get; set; }
 
-    private TicketId(Guid value)
-    {
-        Value = value;
-    }
-
-    public static TicketId CreateUnique()=> new TicketId(Guid.NewGuid());
     public override IEnumerable<object> GetEqualityComponents()
     {
         throw new NotImplementedException();

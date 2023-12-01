@@ -13,11 +13,14 @@
   <ItemGroup>
     <Folder Include="Tickets\Entities\" />
     <Folder Include="Tickets\Enums\" />
-    <Folder Include="Tickets\Inerfaces\" />
     <Folder Include="Tickets\Errors\" />
+    <Folder Include="Users\Entities\" />
+    <Folder Include="Users\Enums\" />
+    <Folder Include="Users\Errors\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
     <PackageReference Include="SequentialGuid" Version="4.0.4" />
   </ItemGroup>
 

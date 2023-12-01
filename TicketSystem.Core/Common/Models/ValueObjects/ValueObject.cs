@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicketSystem.Domain.Common.Models;
-public abstract class ValueObject : IEquatable<ValueObject>
+namespace TicketSystem.Domain.Common.Models.ValueObjects;
+public abstract class ValueObject :  IEquatable<ValueObject>
 {
     public abstract IEnumerable<object> GetEqualityComponents();
+    public Guid CreatorId { get; set; }
+    public DateTime CreatedAt { get; set; }
     public override bool Equals(object? obj)
     {
         if (obj is null || obj.GetType() != GetType())

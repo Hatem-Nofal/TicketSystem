@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 using TicketSystem.Domain.Common.Models.ValueObjects;
 
 namespace TicketSystem.Domain.Tickets.ValueObjects;
-public sealed class TicketId : ValueObject
+public sealed class TicketHistory : ValueObject
 {
-    public Guid Value { get;   }
+    public TicketId TicketId { get; set; }
+    public int Status { get; set; }
+    public Guid AssingTo { get; set; }
 
-    private TicketId(Guid value)
-    {
-        Value = value;
-    }
-
-    public static TicketId CreateUnique()=> new TicketId(Guid.NewGuid());
     public override IEnumerable<object> GetEqualityComponents()
     {
         throw new NotImplementedException();
