@@ -16,6 +16,10 @@ public sealed class TicketId : ValueObject
     }
 
     public static TicketId CreateUnique()=> new TicketId(Guid.NewGuid());
+    public static TicketId Create(Guid Value)
+    {
+        return new TicketId(Value);
+    }
     public override IEnumerable<object> GetEqualityComponents()
     {
         throw new NotImplementedException();

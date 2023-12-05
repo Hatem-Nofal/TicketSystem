@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -9,10 +10,11 @@ using TicketSystem.Domain.Common.Helpers;
 using TicketSystem.Domain.Common.Helpers.Errors;
 
 namespace TicketSystem.Domain.Common.Models.ValueObjects;
+[Owned]
 public sealed record Email
 {
-    private Email(string value) => Value = value;
-
+    protected Email(string value) => Value = value;
+    private Email() { }
     public string Value { get; }
 
     public static Result<Email> Create(string? email)

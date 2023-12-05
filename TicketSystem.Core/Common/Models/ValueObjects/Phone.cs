@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -9,9 +10,11 @@ using TicketSystem.Domain.Common.Helpers;
 using TicketSystem.Domain.Common.Helpers.Errors;
 
 namespace TicketSystem.Domain.Common.Models.ValueObjects;
+[Owned]
 public sealed record Phone
 {
     private Phone(string value) => Value = value;
+    private Phone() { }
 
     public string Value { get; }
 
@@ -25,8 +28,7 @@ public sealed record Phone
         {
             return Result.Failure<Phone>(PhoneErrors.InvalidFormate);
         }
-
-        return Result.Success(new Phone(phone));
+         return Result.Success(new Phone(phone));
 
     }
     private static bool IsValidPhone(string phone)

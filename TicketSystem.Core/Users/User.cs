@@ -12,13 +12,22 @@ using TicketSystem.Domain.Users.ValueObjects;
 namespace TicketSystem.Domain.Users;
 public sealed class User  : AggregateRoot<UserId>
 {
-    private User(UserId id,string userName, Guid identityUsersId, string photoURL, Email email, Phone phone):base(id)
+    //private User(UserId id,string userName, Guid identityUsersId, string photoURL, Email email, Phone phone):base(id)
+    //{
+    //    UserName = userName;
+    //    IdentityUsersId = identityUsersId;
+    //    PhotoURL = photoURL;
+    //    Email = email;
+    //    Phone = phone;
+    //}
+
+    private User() : base(null)
     {
-        UserName = userName;
-        IdentityUsersId = identityUsersId;
-        PhotoURL = photoURL;
-        Email = email;
-        Phone = phone;
+
+    }
+    private User(UserId id) : base(id)
+    {
+
     }
 
     public string UserName { get; private set; }
@@ -29,7 +38,12 @@ public sealed class User  : AggregateRoot<UserId>
 
     public static User Create(string userName, Guid identityUsersId, string photoURL, Email email, Phone phone)
     {
-        var user = new User(UserId.CreateUnique(), userName, identityUsersId, photoURL, email, phone);
+        var user = new User(UserId.CreateUnique());
+        user.UserName = userName;
+        user.IdentityUsersId = identityUsersId;
+        user.PhotoURL = photoURL;
+        user.Email = email;
+        user.Phone = phone;
         user.Raise(new UserCreatedDomainEvent(Guid.NewGuid(), user!.Id ));
         return user;
 

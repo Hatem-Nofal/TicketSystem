@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +10,7 @@ using TicketSystem.Domain.Common.Primitives;
 namespace TicketSystem.Domain.Common.Models;
 public abstract class Entity<TId> : IEquatable<Entity<TId>> where TId : notnull
 {
+    [Key]
     public TId Id { get; protected set; }
     public Guid CreatorId { get; set; }
     public DateTime CreatedAt { get; set; }

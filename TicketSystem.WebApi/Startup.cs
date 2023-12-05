@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
+using TicketSystem.Application.Configurations;
 using TicketSystem.WebApi.Configurations;
 
 namespace TicketSystem.WebApi
@@ -51,6 +52,7 @@ namespace TicketSystem.WebApi
             //Configure Controllers from  Presentation
             var presentationAssembly = Presentation.AssemblyReferenceHelper.GetAssembly();
             services.AddControllers().AddApplicationPart(presentationAssembly);
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             //Configure MediatR from  Application
             var applicationAsAmbly = Application.AssemblyReferenceHelper.GetAssembly();
@@ -59,12 +61,14 @@ namespace TicketSystem.WebApi
             {
                 cfg.RegisterServicesFromAssemblies(typeof(Startup).Assembly, applicationAsAmbly);
             });
+            services.AddControllersWithViews();
 
             //DependencyInjectionConfiguration
             services.AddDependencyInjectionConfiguration(_configuration);
 
             // Swagger Config
             services.AddSwaggerConfigurationIdentityServer(_configuration);
+            services.AddDatabaseConfiguration(_configuration);
 
         }
 

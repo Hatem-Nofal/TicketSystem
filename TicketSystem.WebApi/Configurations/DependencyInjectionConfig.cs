@@ -9,7 +9,7 @@ namespace TicketSystem.WebApi.Configurations
         public static void AddDependencyInjectionConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
-            ApplicationServiceConfig.ApplicationServiceConfiguration(services);
+            ApplicationServiceConfig.ApplicationServiceConfiguration(services, configuration);
             InfrastructureServiceConfig.InfrastructureServiceConfiguration(services, configuration);
             PresentationServiceConfig.PresentationServiceConfiguration(services, configuration);
         }
