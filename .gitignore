@@ -261,3 +261,4 @@ paket-files/
 *.txt
 .vs/
 /.vs/ProjectEvaluation/ticketsystem.metadata.v7.bin
+/.vs/ProjectEvaluation/ticketsystem.projects.v7.bin
