@@ -53,7 +53,7 @@ namespace TicketSystem.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Comment",
+                name: "Comments",
                 columns: table => new
                 {
                     TicketId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -65,9 +65,9 @@ namespace TicketSystem.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Comment", x => new { x.TicketId, x.Id });
+                    table.PrimaryKey("PK_Comments", x => new { x.TicketId, x.Id });
                     table.ForeignKey(
-                        name: "FK_Comment_Tickets_TicketId",
+                        name: "FK_Comments_Tickets_TicketId",
                         column: x => x.TicketId,
                         principalTable: "Tickets",
                         principalColumn: "Id",
@@ -75,7 +75,7 @@ namespace TicketSystem.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TicketHistory",
+                name: "TicketHistories",
                 columns: table => new
                 {
                     TicketId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -88,9 +88,9 @@ namespace TicketSystem.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TicketHistory", x => new { x.TicketId, x.Id });
+                    table.PrimaryKey("PK_TicketHistories", x => new { x.TicketId, x.Id });
                     table.ForeignKey(
-                        name: "FK_TicketHistory_Tickets_TicketId",
+                        name: "FK_TicketHistories_Tickets_TicketId",
                         column: x => x.TicketId,
                         principalTable: "Tickets",
                         principalColumn: "Id",
@@ -147,13 +147,13 @@ namespace TicketSystem.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Comment");
+                name: "Comments");
 
             migrationBuilder.DropTable(
                 name: "DomainEvent");
 
             migrationBuilder.DropTable(
-                name: "TicketHistory");
+                name: "TicketHistories");
 
             migrationBuilder.DropTable(
                 name: "Users");

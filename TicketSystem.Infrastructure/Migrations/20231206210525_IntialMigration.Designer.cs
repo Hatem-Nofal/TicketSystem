@@ -12,7 +12,7 @@ using TicketSystem.Infrastructure.Context;
 namespace TicketSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(TicketSystemDbContext))]
-    [Migration("20231205113135_IntialMigration")]
+    [Migration("20231206210525_IntialMigration")]
     partial class IntialMigration
     {
         /// <inheritdoc />
@@ -164,7 +164,7 @@ namespace TicketSystem.Infrastructure.Migrations
 
                             b1.HasKey("TicketId", "Id");
 
-                            b1.ToTable("Comment");
+                            b1.ToTable("Comments", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("TicketId");
@@ -200,7 +200,7 @@ namespace TicketSystem.Infrastructure.Migrations
 
                             b1.HasKey("TicketId", "Id");
 
-                            b1.ToTable("TicketHistory");
+                            b1.ToTable("TicketHistories", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("TicketId");

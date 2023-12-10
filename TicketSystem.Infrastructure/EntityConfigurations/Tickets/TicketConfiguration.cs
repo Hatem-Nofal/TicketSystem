@@ -44,6 +44,8 @@ internal sealed class TicketConfiguration : IEntityTypeConfiguration<Ticket>
         builder.OwnsMany(ticket => ticket.Comments,
                          navigationBuilder =>
                          {
+                             navigationBuilder.ToTable("Comments");
+
                              navigationBuilder.Property(comment => comment.Body)
                                               .HasColumnName("Body");
                              navigationBuilder.Property(comment => comment.CreatorId)
@@ -61,6 +63,7 @@ internal sealed class TicketConfiguration : IEntityTypeConfiguration<Ticket>
         builder.OwnsMany(ticket => ticket.TicketHistories,
                         navigationBuilder =>
                         {
+                            navigationBuilder.ToTable("TicketHistories");
                             navigationBuilder.Property(ticketHistory => ticketHistory.Status)
                                              .HasColumnName("Status");
                             navigationBuilder.Property(ticketHistory => ticketHistory.CreatorId)
