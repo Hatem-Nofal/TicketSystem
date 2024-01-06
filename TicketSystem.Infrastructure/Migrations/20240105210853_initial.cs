@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TicketSystem.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class IntialMigration : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -56,16 +56,18 @@ namespace TicketSystem.Infrastructure.Migrations
                 name: "Comments",
                 columns: table => new
                 {
+                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    Body = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
                     TicketId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Body = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Comments", x => new { x.TicketId, x.Id });
+                    table.PrimaryKey("PK_Comments", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Comments_Tickets_TicketId",
                         column: x => x.TicketId,
@@ -102,12 +104,18 @@ namespace TicketSystem.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CommentId = table.Column<long>(type: "bigint", nullable: true),
                     TicketId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DomainEvent", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_DomainEvent_Comments_CommentId",
+                        column: x => x.CommentId,
+                        principalTable: "Comments",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_DomainEvent_Tickets_TicketId",
                         column: x => x.TicketId,
@@ -119,6 +127,16 @@ namespace TicketSystem.Infrastructure.Migrations
                         principalTable: "Users",
                         principalColumn: "Id");
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comments_TicketId",
+                table: "Comments",
+                column: "TicketId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DomainEvent_CommentId",
+                table: "DomainEvent",
+                column: "CommentId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DomainEvent_TicketId",
@@ -147,13 +165,13 @@ namespace TicketSystem.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Comments");
-
-            migrationBuilder.DropTable(
                 name: "DomainEvent");
 
             migrationBuilder.DropTable(
                 name: "TicketHistories");
+
+            migrationBuilder.DropTable(
+                name: "Comments");
 
             migrationBuilder.DropTable(
                 name: "Users");

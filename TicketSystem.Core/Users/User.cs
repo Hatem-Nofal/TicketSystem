@@ -5,21 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TicketSystem.Domain.Common.Models;
 using TicketSystem.Domain.Common.Models.ValueObjects;
-using TicketSystem.Domain.Tickets.ValueObjects;
 using TicketSystem.Domain.Users.Events;
 using TicketSystem.Domain.Users.ValueObjects;
 
 namespace TicketSystem.Domain.Users;
 public sealed class User  : AggregateRoot<UserId>
 {
-    //private User(UserId id,string userName, Guid identityUsersId, string photoURL, Email email, Phone phone):base(id)
-    //{
-    //    UserName = userName;
-    //    IdentityUsersId = identityUsersId;
-    //    PhotoURL = photoURL;
-    //    Email = email;
-    //    Phone = phone;
-    //}
+    
 
     private User() : base(null)
     {
@@ -31,12 +23,12 @@ public sealed class User  : AggregateRoot<UserId>
     }
 
     public string UserName { get; private set; }
-    public Guid IdentityUsersId { get; private set; }
+    public IdentityUsersId IdentityUsersId { get; private set; }
     public string PhotoURL { get; private set; }
     public Email Email { get; private set; }
     public Phone Phone { get; private set; }
 
-    public static User Create(string userName, Guid identityUsersId, string photoURL, Email email, Phone phone)
+    public static User Create(string userName, IdentityUsersId identityUsersId, string photoURL, Email email, Phone phone)
     {
         var user = new User(UserId.CreateUnique());
         user.UserName = userName;

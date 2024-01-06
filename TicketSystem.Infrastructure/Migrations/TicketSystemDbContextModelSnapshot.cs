@@ -28,6 +28,9 @@ namespace TicketSystem.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<long?>("CommentId")
+                        .HasColumnType("bigint");
+
                     b.Property<Guid?>("TicketId")
                         .HasColumnType("uniqueidentifier");
 
@@ -36,11 +39,48 @@ namespace TicketSystem.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CommentId");
+
                     b.HasIndex("TicketId");
 
                     b.HasIndex("UserId");
 
                     b.ToTable("DomainEvent");
+                });
+
+            modelBuilder.Entity("TicketSystem.Domain.Tickets.Entities.Comment", b =>
+                {
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Body")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("ModifierId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TicketId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TicketId");
+
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("TicketSystem.Domain.Tickets.Ticket", b =>
@@ -123,6 +163,10 @@ namespace TicketSystem.Infrastructure.Migrations
 
             modelBuilder.Entity("TicketSystem.Domain.Common.Primitives.DomainEvent", b =>
                 {
+                    b.HasOne("TicketSystem.Domain.Tickets.Entities.Comment", null)
+                        .WithMany("DomainEvents")
+                        .HasForeignKey("CommentId");
+
                     b.HasOne("TicketSystem.Domain.Tickets.Ticket", null)
                         .WithMany("DomainEvents")
                         .HasForeignKey("TicketId");
@@ -132,41 +176,17 @@ namespace TicketSystem.Infrastructure.Migrations
                         .HasForeignKey("UserId");
                 });
 
+            modelBuilder.Entity("TicketSystem.Domain.Tickets.Entities.Comment", b =>
+                {
+                    b.HasOne("TicketSystem.Domain.Tickets.Ticket", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("TicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("TicketSystem.Domain.Tickets.Ticket", b =>
                 {
-                    b.OwnsMany("TicketSystem.Domain.Tickets.ValueObjects.Comment", "Comments", b1 =>
-                        {
-                            b1.Property<Guid>("TicketId")
-                                .HasColumnType("uniqueidentifier")
-                                .HasColumnName("TicketId");
-
-                            b1.Property<int>("Id")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int");
-
-                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
-
-                            b1.Property<string>("Body")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)")
-                                .HasColumnName("Body");
-
-                            b1.Property<DateTime>("CreatedAt")
-                                .HasColumnType("datetime2")
-                                .HasColumnName("CreatedAt");
-
-                            b1.Property<Guid>("CreatorId")
-                                .HasColumnType("uniqueidentifier")
-                                .HasColumnName("CreatorId");
-
-                            b1.HasKey("TicketId", "Id");
-
-                            b1.ToTable("Comments", (string)null);
-
-                            b1.WithOwner()
-                                .HasForeignKey("TicketId");
-                        });
-
                     b.OwnsMany("TicketSystem.Domain.Tickets.ValueObjects.TicketHistory", "TicketHistories", b1 =>
                         {
                             b1.Property<Guid>("TicketId")
@@ -202,8 +222,6 @@ namespace TicketSystem.Infrastructure.Migrations
                             b1.WithOwner()
                                 .HasForeignKey("TicketId");
                         });
-
-                    b.Navigation("Comments");
 
                     b.Navigation("TicketHistories");
                 });
@@ -261,8 +279,15 @@ namespace TicketSystem.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("TicketSystem.Domain.Tickets.Entities.Comment", b =>
+                {
+                    b.Navigation("DomainEvents");
+                });
+
             modelBuilder.Entity("TicketSystem.Domain.Tickets.Ticket", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("DomainEvents");
                 });
 

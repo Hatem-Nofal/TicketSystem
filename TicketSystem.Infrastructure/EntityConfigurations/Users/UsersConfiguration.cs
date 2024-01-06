@@ -32,6 +32,11 @@ internal sealed class UsersConfiguration : IEntityTypeConfiguration<User>
             .HasConversion(
                 id => id.Value,
                 value => UserId.Create(value));
+        builder.Property(d => d.IdentityUsersId)
+           .ValueGeneratedNever()
+           .HasConversion(
+               id => id.Value,
+               value => IdentityUsersId.Create(value));
         builder.Property(m => m.UserName).HasMaxLength(100);
         builder.Property(m => m.IdentityUsersId);
         builder.Property(m => m.PhotoURL);

@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using TicketSystem.Domain.Common.Models;
+using TicketSystem.Domain.Tickets.Entities;
+using TicketSystem.Domain.Tickets.Enums;
 using TicketSystem.Domain.Tickets.Events;
 using TicketSystem.Domain.Tickets.ValueObjects;
 using TicketSystem.Domain.Users;
@@ -22,37 +26,51 @@ public sealed class Ticket : AggregateRoot<TicketId>
 
     }
     public string Title { get; protected set; }
-    public int Status { get; protected set; }
+    public StatusEnum Status { get; protected set; }
     public UserId AssingTo { get; protected set; }
     public string Describtion { get; protected set; }
-    private List<Comment> _comments = new();
-    private List<TicketHistory> _ticketHistories = new();
+    private HashSet<Comment> _comments = new();
+    private HashSet<TicketHistory> _ticketHistories = new();
 
-    public IReadOnlyList<Comment> Comments => _comments.AsReadOnly();
-    public IReadOnlyList<TicketHistory> TicketHistories => _ticketHistories.AsReadOnly();
-    //private Ticket(TicketId id, string title, int status, UserId assingTo, string describtion, List<Comment> comments, List<TicketHistory> ticketHistories) : base(id)
-    //{
-    //    Title = title;
-    //    Status = status;
-    //    AssingTo = assingTo;
-    //    Describtion = describtion;
-    //    _comments = comments;
-    //    _ticketHistories = ticketHistories;
-    //}
+    public IReadOnlyList<Comment> Comments => _comments.ToList();
+    public IReadOnlyList<TicketHistory> TicketHistories => _ticketHistories.ToList();
 
-    public Ticket Create(string title, int status, UserId assingTo, string describtion, List<Comment> comments, List<TicketHistory> ticketHistories)
+
+    public Ticket Create(string title, StatusEnum status, UserId assingTo, string describtion)
     {
         var ticket = new Ticket(TicketId.CreateUnique());
         ticket.Title = title;
         ticket.Status = status;
         ticket.AssingTo = assingTo;
         ticket.Describtion = describtion;
-        ticket._comments = comments;
-        ticket._ticketHistories = ticketHistories;
+        CreateTicketHistory();
         ticket.Raise(new TicketCreatedDomainEvent(Guid.NewGuid(), ticket!.Id));
         return ticket;
 
     }
 
+    public void CreateTicketHistory()
+    {
+        var ticketHistory = TicketHistory.Create(Status, Id, AssingTo);
+        _ticketHistories.Add(ticketHistory);
+    }
+    public void CreateComment(string Body)
+    {
+        var comment = Comment.Create(Body, Id);
+        _comments.Add(comment);
+    }
+    public void RemoveComment(Comment comment)
+    {
+        if (comment is null)
+            return;
+        _comments.Remove(comment);
+    }
 
+    public void UpdateComment(CommentId commentId, string Body)
+    {
+        var comment = _comments.FirstOrDefault(c => c.Id == commentId);
+        if (comment is null)
+            return;
+        comment.Update(Body);
+     }
 }

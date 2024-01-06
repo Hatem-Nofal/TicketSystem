@@ -10,7 +10,6 @@ using TicketSystem.Domain.Common.Primitives;
 namespace TicketSystem.Domain.Common.Models;
 public abstract class Entity<TId> : IEquatable<Entity<TId>> where TId : notnull
 {
-    [Key]
     public TId Id { get; protected set; }
     public Guid CreatorId { get; set; }
     public DateTime CreatedAt { get; set; }

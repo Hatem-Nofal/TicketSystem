@@ -33,8 +33,10 @@ public class TicketSystemDbContext : DbContext
     }
     protected override void OnModelCreating(ModelBuilder builder)
     {
+
         builder.ApplyConfiguration(new TicketConfiguration());
-        builder.ApplyConfiguration(new UsersConfiguration());
+        builder.ApplyConfiguration(new CommentsConfiguration());
+         builder.ApplyConfiguration(new UsersConfiguration());
 
         base.OnModelCreating(builder);
     }

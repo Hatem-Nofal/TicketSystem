@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,12 @@ using TicketSystem.Domain.Common.Models.ValueObjects;
 namespace TicketSystem.Domain.Tickets.ValueObjects;
 public sealed class TicketId : ValueObject
 {
-    public Guid Value { get;   }
+     public Guid Value { get;}
 
+    private TicketId()
+    {
+        
+    }
     private TicketId(Guid value)
     {
         Value = value;
