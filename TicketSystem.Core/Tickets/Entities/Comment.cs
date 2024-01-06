@@ -22,18 +22,16 @@ public sealed class Comment : AggregateRoot<CommentId>
 
     public string Body { get; protected set; }
     public TicketId TicketId { get; protected set; }
+    public UserId CreatorId { get; set; }
 
     public static Comment Create(string Body, TicketId TicketId)
     {
-        var comment = new Comment();
+        var comment = new Comment(CommentId.CreateUnique());
         comment.Body = Body;
         comment.TicketId = TicketId;
         comment.Raise(new CommentCreatedDomainEvent(Guid.NewGuid(), comment!.Id));
         return comment;
 
     }
-    public void Update(string body)
-    {
-        Body = body;
-    }
+    public void Update(string body) => Body = body;
 }

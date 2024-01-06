@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,21 +11,10 @@ public sealed class IdentityUsersId : ValueObject
 {
     public Guid Value { get; }
 
-    private IdentityUsersId()
-    {
+    private IdentityUsersId(){}
 
-    }
-    private IdentityUsersId(Guid value)
-    {
-        Value = value;
-    }
+    private IdentityUsersId(Guid value) => Value = value;
 
-    public static IdentityUsersId Create(Guid Value)
-    {
-        return new IdentityUsersId(Value);
-    }
-    public override IEnumerable<object> GetEqualityComponents()
-    {
-        throw new NotImplementedException();
-    }
+    public static IdentityUsersId Create(Guid Value) => new IdentityUsersId(Value);
+    public override IEnumerable<object> GetEqualityComponents() => throw new NotImplementedException();
 }

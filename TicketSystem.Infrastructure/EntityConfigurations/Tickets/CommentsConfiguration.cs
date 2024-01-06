@@ -13,22 +13,26 @@ internal class CommentsConfiguration : IEntityTypeConfiguration<Comment>
     public void Configure(EntityTypeBuilder<Comment> builder)
     {
         CommentConfigure(builder);
-     
+
     }
     private void CommentConfigure(EntityTypeBuilder<Comment> builder)
     {
         builder.ToTable("Comments");
         builder.HasKey(d => d.Id);
-
+        builder.ComplexProperty(x=>x.)
         builder.Property(d => d.Id)
             .ValueGeneratedNever()
             .HasConversion(
                 id => id.Value,
                 value => CommentId.Create(value));
-
+        builder.Property(d => d.CreatorId)
+                                  .ValueGeneratedNever()
+                                  .HasConversion(
+                                  id => id.Value,
+                                  value => UserId.Create(value)).HasColumnName("CreatorId");
 
 
         builder.Property(m => m.Body).HasMaxLength(250);
-  
+
     }
 }

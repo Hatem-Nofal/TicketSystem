@@ -50,6 +50,12 @@ internal sealed class TicketConfiguration : IEntityTypeConfiguration<Ticket>
                                     .HasConversion(
                                         id => id.Value,
                                         value => UserId.Create(value)).HasColumnName("AssingTo");
+                            navigationBuilder.Property(d => d.CreatorId)
+                                  .ValueGeneratedNever()
+                                  .HasConversion(
+                                      id => id.Value,
+                                      value => UserId.Create(value)).HasColumnName("CreatorId");
+
                             navigationBuilder.ToTable("TicketHistories");
                             navigationBuilder.Property(ticketHistory => ticketHistory.Status)
                                              .HasColumnName("Status");
