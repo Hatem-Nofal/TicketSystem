@@ -20,6 +20,7 @@ internal sealed class TicketConfiguration : IEntityTypeConfiguration<Ticket>
     {
         TicketConfigure(builder);
         TicketHistoryConfigure(builder);
+        CommentConfigure(builder);
 
     }
     private void TicketConfigure(EntityTypeBuilder<Ticket> builder)
@@ -29,22 +30,43 @@ internal sealed class TicketConfiguration : IEntityTypeConfiguration<Ticket>
         builder.HasKey(d => d.Id);
 
         builder.Property(d => d.Id)
-            .ValueGeneratedNever()
-            .HasConversion(
-                id => id.Value,
-                value => TicketId.Create(value));
-        builder.HasMany(d => d.Comments).WithOne().HasForeignKey(x => x.TicketId);
-        //builder.HasMany(d => d.TicketHistories ).WithOne().HasForeignKey(x => x.TicketId);
+                .ValueGeneratedNever()
+                .HasConversion(
+                    id => id.Value,
+                    value => TicketId.Create(value));
+
+        builder.Property(d => d.AssingTo)
+               .ValueGeneratedNever()
+               .HasConversion(
+                   id => id.Value,
+                   value => UserId.Create(value)).HasColumnName("AssingTo");
+        builder.Property(d => d.CreatorId)
+              .ValueGeneratedNever()
+              .HasConversion(
+                  id => id.Value,
+                  value => UserId.Create(value)).HasColumnName("CreatorId");
+
+        builder.Property(d => d.ModifierId)
+           .ValueGeneratedNever()
+           .HasConversion(
+               id => id.Value,
+               value => UserId.Create(value)).HasColumnName("ModifierId");
 
         builder.Property(m => m.Title).HasMaxLength(100);
         builder.Property(m => m.Describtion).HasMaxLength(250);
-        builder.Property(m => m.AssingTo).ValueGeneratedNever().HasConversion(id => id.Value, value => UserId.Create(value));
+        builder.OwnsMany(c => c.DomainEvents);
+
+        // builder.HasMany(d => d.Comments).WithOne().HasForeignKey(x => x.TicketId);
+
     }
+
     private void TicketHistoryConfigure(EntityTypeBuilder<Ticket> builder)
     {
         builder.OwnsMany(ticket => ticket.TicketHistories,
                         navigationBuilder =>
                         {
+                            navigationBuilder.ToTable("TicketHistories");
+
                             navigationBuilder.Property(d => d.AssingTo)
                                     .ValueGeneratedNever()
                                     .HasConversion(
@@ -56,21 +78,64 @@ internal sealed class TicketConfiguration : IEntityTypeConfiguration<Ticket>
                                       id => id.Value,
                                       value => UserId.Create(value)).HasColumnName("CreatorId");
 
-                            navigationBuilder.ToTable("TicketHistories");
-                            navigationBuilder.Property(ticketHistory => ticketHistory.Status)
-                                             .HasColumnName("Status");
-                            navigationBuilder.Property(ticketHistory => ticketHistory.CreatorId)
-                                             .HasColumnName("CreatorId");
                             navigationBuilder.Property(ticketHistory => ticketHistory.CreatedAt)
-                                           .HasColumnName("CreatedAt");
+                                                                      .HasColumnName("CreatedAt");
+       
                             navigationBuilder.Property(ticketHistory => ticketHistory.TicketId)
-                                         .HasColumnName("TicketId");
-                            //navigationBuilder.Property(ticketHistory => ticketHistory.AssingTo)
-                            //         .HasColumnName("AssingTo");
+                                          .ValueGeneratedNever()
+                                 .HasConversion(
+                                   id => id.Value,
+                                   value => TicketId.Create(value))
+                                 .HasColumnName("TicketId");
+
+
 
                         });
 
 
     }
+    private void CommentConfigure(EntityTypeBuilder<Ticket> builder)
+    {
+        builder.OwnsMany(ticket => ticket.Comments,
+                        navigationBuilder =>
+                        {
+                             navigationBuilder.ToTable("Comments");
+                            navigationBuilder.HasKey(d => d.Id);
 
+                            navigationBuilder.Property(d => d.Id)
+                                             .ValueGeneratedNever()
+                                             .HasConversion(
+                                                 id => id.Value,
+                                                 value => CommentId.Create(value));
+                            navigationBuilder.Property(d => d.CreatorId)
+                                  .ValueGeneratedNever()
+                                  .HasConversion(
+                                      id => id.Value,
+                                      value => UserId.Create(value)).HasColumnName("CreatorId");
+
+                            navigationBuilder.Property(ticketHistory => ticketHistory.CreatedAt)
+                                                                      .HasColumnName("CreatedAt");
+
+                            navigationBuilder.Property(ticketHistory => ticketHistory.TicketId)
+                                          .ValueGeneratedNever()
+                                 .HasConversion(
+                                   id => id.Value,
+                                   value => TicketId.Create(value))
+                                 .HasColumnName("TicketId");
+
+                            navigationBuilder.Property(d => d.ModifierId)
+                             .ValueGeneratedNever()
+                             .HasConversion(
+                               id => id.Value,
+                               value => UserId.Create(value))
+                             .HasColumnName("ModifierId");
+
+                            navigationBuilder.Property(m => m.Body).HasMaxLength(250);
+
+                            navigationBuilder.OwnsMany(c => c.DomainEvents);
+
+                        });
+
+
+    }
 }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TicketSystem.Domain.Common.Interfaces;
+using TicketSystem.Application.Interfaces.Base;
 using TicketSystem.Domain.Common.Models;
 using TicketSystem.Infrastructure.Context;
 

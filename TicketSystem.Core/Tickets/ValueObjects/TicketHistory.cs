@@ -11,13 +11,15 @@ using TicketSystem.Domain.Tickets.Events;
 using TicketSystem.Domain.Users.ValueObjects;
 
 namespace TicketSystem.Domain.Tickets.ValueObjects;
+
 public sealed class TicketHistory : ValueObject
 {
  
     public TicketId TicketId { get; protected set; }
     public StatusEnum Status { get; protected set; }
     public UserId AssingTo { get; protected set; }
-    public UserId CreatorId { get; set; }
+    public UserId CreatorId { get; protected set; }
+    public Ticket Ticket { get; set; }
 
     public override IEnumerable<object> GetEqualityComponents() => throw new NotImplementedException();
 

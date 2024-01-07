@@ -1,12 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using TicketSystem.Domain.Common.Interfaces;
+using TicketSystem.Application.Interfaces.Base;
 using TicketSystem.Domain.Tickets;
 using TicketSystem.Domain.Users;
 using TicketSystem.Infrastructure.EntityConfigurations.Tickets;
@@ -33,10 +26,13 @@ public class TicketSystemDbContext : DbContext
     }
     protected override void OnModelCreating(ModelBuilder builder)
     {
-         builder.ApplyConfiguration(new TicketConfiguration());
-        builder.ApplyConfiguration(new CommentsConfiguration());
-        builder.ApplyConfiguration(new UsersConfiguration());
+      
+      
 
+        builder.ApplyConfiguration(new TicketConfiguration());
+       // builder.ApplyConfiguration(new CommentsConfiguration());
+        builder.ApplyConfiguration(new UsersConfiguration());
+ 
         base.OnModelCreating(builder);
     }
 

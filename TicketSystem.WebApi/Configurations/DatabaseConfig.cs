@@ -1,8 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+ using Microsoft.EntityFrameworkCore;
 using TicketSystem.Infrastructure.Context;
-using Microsoft.EntityFrameworkCore;
-using TicketSystem.Domain.Common.Interfaces;
 namespace TicketSystem.Application.Configurations;
 
 public static class DatabaseConfig

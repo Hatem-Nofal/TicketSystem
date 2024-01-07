@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ using TicketSystem.Domain.Common.Models.ValueObjects;
 using TicketSystem.Domain.Users.ValueObjects;
 
 namespace TicketSystem.Domain.Tickets.ValueObjects;
+[ComplexType]
 public sealed class CommentId : ValueObject
 {
     public Guid Value { get; }

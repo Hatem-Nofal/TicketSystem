@@ -4,9 +4,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using TicketSystem.Domain.Common.Models;
-
-namespace TicketSystem.Domain.Common.Interfaces;
+ 
+namespace TicketSystem.Application.Interfaces.Base;
 public interface IRepository<T, TId> where T : class, TId where TId : notnull
 {
     void Add(T entity);

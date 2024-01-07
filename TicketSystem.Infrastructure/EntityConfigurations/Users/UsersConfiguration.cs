@@ -40,7 +40,17 @@ internal sealed class UsersConfiguration : IEntityTypeConfiguration<User>
         builder.Property(m => m.UserName).HasMaxLength(100);
         builder.Property(m => m.IdentityUsersId);
         builder.Property(m => m.PhotoURL);
-     
+        builder.Property(d => d.CreatorId)
+             .ValueGeneratedNever()
+             .HasConversion(
+                 id => id.Value,
+                 value => UserId.Create(value)).HasColumnName("CreatorId");
+
+        builder.Property(d => d.ModifierId)
+           .ValueGeneratedNever()
+           .HasConversion(
+               id => id.Value,
+               value => UserId.Create(value)).HasColumnName("ModifierId");
         builder.OwnsOne(user => user.Email,
                         navigationBuilder =>
                         {
@@ -59,6 +69,8 @@ internal sealed class UsersConfiguration : IEntityTypeConfiguration<User>
 
 
                         });
+        builder.OwnsMany(c => c.DomainEvents);
+
 
     }
 

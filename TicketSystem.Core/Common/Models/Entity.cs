@@ -16,7 +16,7 @@ public abstract class Entity<TId> : IEquatable<Entity<TId>> where TId : notnull
     public DateTime CreatedAt { get; set; }
     public DateTime? ModifiedAt { get; set; }
     public DateTime? DeletedAt { get; set; }
-    public UserId? ModifierId { get; set; }
+    public UserId ModifierId { get; set; }
 
     private readonly List<DomainEvent > _domainEvents = new();
 

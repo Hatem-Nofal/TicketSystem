@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TicketSystem.Domain.Common.Models;
-
-namespace TicketSystem.Domain.Common.Interfaces;
+ 
+namespace TicketSystem.Application.Interfaces.Base;
 public interface IUnitOfWork : IDisposable
 {
-    IRepository<TEntity, TId> Repository<TEntity, TId>() where TEntity : class,  TId where TId:notnull ;
+    IRepository<TEntity, TId> Repository<TEntity, TId>() where TEntity : class, TId where TId : notnull;
     Task<bool> Commit();
     void RollBackTransaction();
     void CreateTransction();

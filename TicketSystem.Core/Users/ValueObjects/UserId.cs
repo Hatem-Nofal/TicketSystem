@@ -10,16 +10,14 @@ using TicketSystem.Domain.Tickets.ValueObjects;
 
 namespace TicketSystem.Domain.Users.ValueObjects;
 [ComplexType]
-public sealed class UserId : ValueObject
+ public sealed class UserId : ValueObject
 {
     public Guid Value { get; }
-     private UserId(Guid value) => Value = value;
+    private UserId(){ }
+    private UserId(Guid value) => Value = value;
 
 
     public static UserId CreateUnique() => new UserId(Guid.NewGuid());
-    public override IEnumerable<object> GetEqualityComponents()
-    {
-        throw new NotImplementedException();
-    }
+    public override IEnumerable<object> GetEqualityComponents() => throw new NotImplementedException();
     public static UserId Create(Guid Value) => new UserId(Value);
 }

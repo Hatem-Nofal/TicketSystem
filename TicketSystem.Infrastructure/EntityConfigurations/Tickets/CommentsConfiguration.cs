@@ -18,21 +18,40 @@ internal class CommentsConfiguration : IEntityTypeConfiguration<Comment>
     private void CommentConfigure(EntityTypeBuilder<Comment> builder)
     {
         builder.ToTable("Comments");
+ 
         builder.HasKey(d => d.Id);
-        builder.ComplexProperty(x=>x.)
+
         builder.Property(d => d.Id)
             .ValueGeneratedNever()
             .HasConversion(
                 id => id.Value,
                 value => CommentId.Create(value));
-        builder.Property(d => d.CreatorId)
-                                  .ValueGeneratedNever()
-                                  .HasConversion(
-                                  id => id.Value,
-                                  value => UserId.Create(value)).HasColumnName("CreatorId");
 
+
+
+        builder.Property(d => d.CreatorId)
+                                 .ValueGeneratedNever()
+                                 .HasConversion(
+                                   id => id.Value,
+                                   value => UserId.Create(value))
+                                 .HasColumnName("CreatorId");
+
+        builder.Property(d => d.ModifierId)
+                                   .ValueGeneratedNever()
+                                   .HasConversion(
+                                     id => id.Value,
+                                     value => UserId.Create(value))
+                                   .HasColumnName("ModifierId");
+
+        builder.Property(ticketHistory => ticketHistory.TicketId)
+                                   .ValueGeneratedNever()
+                                 .HasConversion(
+                                   id => id.Value,
+                                   value => TicketId.Create(value))
+                                 .HasColumnName("TicketId");
 
         builder.Property(m => m.Body).HasMaxLength(250);
+        //builder.HasOne(d => d.Ticket).WithMany().HasForeignKey(x => x.TicketId);
 
     }
 }

@@ -23,6 +23,14 @@ public sealed class Ticket : AggregateRoot<TicketId>
     public StatusEnum Status { get; protected set; }
     public UserId AssingTo { get; protected set; }
     public string Describtion { get; protected set; }
+    public decimal OriginalEstimate { get; protected set; }
+    public decimal RemainingWork { get; protected set; }
+    public decimal CompletedWork { get; protected set; }
+    public SeverityEnum Severity { get; protected set; }
+
+
+
+
     private HashSet<Comment> _comments = new();
     private HashSet<TicketHistory> _ticketHistories = new();
 
@@ -30,14 +38,19 @@ public sealed class Ticket : AggregateRoot<TicketId>
     public IReadOnlyList<TicketHistory> TicketHistories => _ticketHistories.ToList();
 
 
-    public Ticket Create(string title, StatusEnum status, UserId assingTo, string describtion)
+    public Ticket Create(string title, StatusEnum status, UserId assingTo, string describtion, decimal originalEstimate, SeverityEnum severity)
     {
         var ticket = new Ticket(TicketId.CreateUnique())
         {
             Title = title,
             Status = status,
             AssingTo = assingTo,
-            Describtion = describtion
+            Describtion = describtion,
+            OriginalEstimate = originalEstimate,
+            RemainingWork = default,
+            Severity = severity,
+            CompletedWork = default
+
         };
         CreateTicketHistory();
         ticket.Raise(new TicketCreatedDomainEvent(Guid.NewGuid(), ticket!.Id));
@@ -52,6 +65,10 @@ public sealed class Ticket : AggregateRoot<TicketId>
             Status = Updatedticket.Status,
             AssingTo = Updatedticket.AssingTo,
             Describtion = Updatedticket.Describtion,
+            OriginalEstimate = Updatedticket.OriginalEstimate,
+            RemainingWork = Updatedticket.RemainingWork,
+            Severity = Updatedticket.Severity,
+            CompletedWork = Updatedticket.CompletedWork,
             _comments = Updatedticket._comments
         };
         CreateTicketHistory();
@@ -66,7 +83,7 @@ public sealed class Ticket : AggregateRoot<TicketId>
     }
     public void CreateComment(string Body)
     {
-        var comment = Comment.Create(Body, Id);
+        var comment = Comment.Create(Body, Id,CreatorId);
         _comments.Add(comment);
     }
     public void RemoveComment(Comment comment)
