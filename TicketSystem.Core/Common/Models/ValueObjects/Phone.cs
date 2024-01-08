@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using TicketSystem.Domain.Common.Helpers;
-using TicketSystem.Domain.Common.Helpers.Errors;
+using TicketSystem.Domain.Common.Helpers.Errors.ValueObjects;
 
 namespace TicketSystem.Domain.Common.Models.ValueObjects;
 [Owned]

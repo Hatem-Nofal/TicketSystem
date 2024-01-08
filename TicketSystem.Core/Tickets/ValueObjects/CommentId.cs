@@ -20,6 +20,6 @@ public sealed class CommentId : ValueObject
     public static CommentId Create(Guid Value) => new CommentId(Value);
     public override IEnumerable<object> GetEqualityComponents()
     {
-        throw new NotImplementedException();
+        yield return Value;
     }
 }

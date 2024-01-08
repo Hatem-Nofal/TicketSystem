@@ -18,6 +18,9 @@ namespace TicketSystem.Domain.Users.ValueObjects;
 
 
     public static UserId CreateUnique() => new UserId(Guid.NewGuid());
-    public override IEnumerable<object> GetEqualityComponents() => throw new NotImplementedException();
+    public override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return Value;
+    }
     public static UserId Create(Guid Value) => new UserId(Value);
 }

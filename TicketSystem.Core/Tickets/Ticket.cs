@@ -59,6 +59,7 @@ public sealed class Ticket : AggregateRoot<TicketId>
     }
     public Ticket Update(Ticket Updatedticket)
     {
+
         var ticket = new Ticket(TicketId.Create(Updatedticket.Id.Value))
         {
             Title = Updatedticket.Title,

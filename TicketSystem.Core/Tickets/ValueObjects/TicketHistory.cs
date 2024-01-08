@@ -21,8 +21,10 @@ public sealed class TicketHistory : ValueObject
     public UserId CreatorId { get; protected set; }
     public Ticket Ticket { get; set; }
 
-    public override IEnumerable<object> GetEqualityComponents() => throw new NotImplementedException();
-
+    public override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return new TicketHistory();
+    }
 
     public static TicketHistory Create(StatusEnum Status, TicketId TicketId, UserId AssingTo, UserId CreatorId)
     {

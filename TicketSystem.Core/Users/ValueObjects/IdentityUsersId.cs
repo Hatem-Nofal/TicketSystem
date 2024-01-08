@@ -16,5 +16,8 @@ public sealed class IdentityUsersId : ValueObject
     private IdentityUsersId(Guid value) => Value = value;
 
     public static IdentityUsersId Create(Guid Value) => new IdentityUsersId(Value);
-    public override IEnumerable<object> GetEqualityComponents() => throw new NotImplementedException();
+    public override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return Value;
+    }
 }

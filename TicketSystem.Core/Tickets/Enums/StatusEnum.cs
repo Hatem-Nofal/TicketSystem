@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -6,21 +7,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TicketSystem.Domain.Tickets.Enums;
-public enum StatusEnum
+ 
+public sealed class StatusEnum : Enumeration<StatusEnum>
 {
-    [Description(nameof(StatusEnum.New))]
-    New = 1,
+    public static readonly SeverityEnum New = new(1, "New");
+    public static readonly SeverityEnum Active = new(2, "Active");
+    public static readonly SeverityEnum Resolved = new(3, "Resolved");
+    public static readonly SeverityEnum Closed = new(4, "Closed");
+    public static readonly SeverityEnum Removed = new(4, "Removed");
 
-    [Description(nameof(StatusEnum.Active))]
-    Active = 2,
-
-    [Description(nameof(StatusEnum.Resolved))]
-    Resolved = 3,
-
-    [Description(nameof(StatusEnum.Closed))]
-    Closed = 4,
-
-    [Description(nameof(StatusEnum.Removed))]
-    Removed = 5,
-
+    public StatusEnum(int value, string name) : base(value, name)
+    {
+    }
 }
