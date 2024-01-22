@@ -15,6 +15,7 @@ namespace TicketSystem.Domain.Tickets.Enums;
     public static readonly SeverityEnum Medium = new(3, "3-Medium");
     public static readonly SeverityEnum Low = new(4, "4-Low");
 
+
     public SeverityEnum(int value, string name) : base(value,name )
     {
     }

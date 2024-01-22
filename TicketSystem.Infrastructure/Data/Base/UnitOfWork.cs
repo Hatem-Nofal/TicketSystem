@@ -50,8 +50,7 @@ public class UnitOfWork : IUnitOfWork
     public void RollBackTransaction()
     {
         transaction.Rollback();
-        //_context.ChangeTracker.Clear();
-        //_context.Dispose();
+ 
     }
 
 
@@ -63,8 +62,7 @@ public class UnitOfWork : IUnitOfWork
 
     public void Dispose()
     {
-        // _context.Dispose();
-        Dispose(true);
+         Dispose(true);
         GC.SuppressFinalize(this);
     }
 

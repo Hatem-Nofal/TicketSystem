@@ -10,7 +10,7 @@ using TicketSystem.Domain.Tickets.ValueObjects;
 using TicketSystem.Domain.Users.ValueObjects;
 
 namespace TicketSystem.Domain.Tickets.Entities;
-public sealed class Comment : AggregateRoot<CommentId>
+public sealed class Comment : Entity<CommentId>
 {
     private Comment() : base(null)
     {
