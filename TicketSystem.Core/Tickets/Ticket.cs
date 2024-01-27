@@ -34,8 +34,8 @@ public sealed class Ticket : AggregateRoot<TicketId>
     private HashSet<Comment> _comments = new();
     private HashSet<TicketHistory> _ticketHistories = new();
 
-    public IReadOnlyList<Comment> Comments => _comments.ToList();
-    public IReadOnlyList<TicketHistory> TicketHistories => _ticketHistories.ToList();
+    public Lazy<IReadOnlyList<Comment>> Comments => new Lazy<IReadOnlyList<Comment>>( _comments.ToList());
+    public Lazy<IReadOnlyList<TicketHistory>> TicketHistories => new Lazy<IReadOnlyList<TicketHistory>>(_ticketHistories.ToList());
 
 
     public Ticket Create(string title, StatusEnum status, UserId assingTo, string describtion, decimal originalEstimate, SeverityEnum severity)
@@ -92,8 +92,7 @@ public sealed class Ticket : AggregateRoot<TicketId>
         if (comment is null)
             return;
         _comments.Remove(comment);
-    }
-
+      }
     public void UpdateComment(CommentId commentId, string Body)
     {
         var comment = _comments.FirstOrDefault(c => c.Id == commentId);
@@ -101,4 +100,7 @@ public sealed class Ticket : AggregateRoot<TicketId>
             return;
         comment.Update(Body);
     }
+
 }
+
+ 

@@ -1,15 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TicketSystem.Domain.Tickets;
 using TicketSystem.Domain.Tickets.ValueObjects;
 using TicketSystem.Domain.Users.ValueObjects;
-using System.Xml.Linq;
-using System.Reflection.Emit;
 
 namespace TicketSystem.Infrastructure.EntityConfigurations.Tickets;
 
@@ -62,7 +55,7 @@ internal sealed class TicketConfiguration : IEntityTypeConfiguration<Ticket>
 
     private void TicketHistoryConfigure(EntityTypeBuilder<Ticket> builder)
     {
-        builder.OwnsMany(ticket => ticket.TicketHistories,
+        builder.OwnsMany(ticket => ticket.TicketHistories.Value,
                         navigationBuilder =>
                         {
                             navigationBuilder.ToTable("TicketHistories");
@@ -80,7 +73,7 @@ internal sealed class TicketConfiguration : IEntityTypeConfiguration<Ticket>
 
                             navigationBuilder.Property(ticketHistory => ticketHistory.CreatedAt)
                                                                       .HasColumnName("CreatedAt");
-       
+
                             navigationBuilder.Property(ticketHistory => ticketHistory.TicketId)
                                           .ValueGeneratedNever()
                                  .HasConversion(
@@ -96,10 +89,10 @@ internal sealed class TicketConfiguration : IEntityTypeConfiguration<Ticket>
     }
     private void CommentConfigure(EntityTypeBuilder<Ticket> builder)
     {
-        builder.OwnsMany(ticket => ticket.Comments,
+        builder.OwnsMany(ticket => ticket.Comments.Value,
                         navigationBuilder =>
                         {
-                             navigationBuilder.ToTable("Comments");
+                            navigationBuilder.ToTable("Comments");
                             navigationBuilder.HasKey(d => d.Id);
 
                             navigationBuilder.Property(d => d.Id)

@@ -17,13 +17,13 @@ namespace Server
             };
 
         public static IEnumerable<ApiScope> ApiScopes =>
-            new[] { new ApiScope("CoffeeAPI.read"), new ApiScope("CoffeeAPI.write"), };
+            new[] { new ApiScope("TicketSystem.read"), new ApiScope("TicketSystem.write"), };
         public static IEnumerable<ApiResource> ApiResources =>
             new[]
             {
-                new ApiResource("CoffeeAPI")
+                new ApiResource("TicketSystem")
                 {
-                    Scopes = new List<string> { "CoffeeAPI.read", "CoffeeAPI.write" },
+                    Scopes = new List<string> { "TicketSystem.read", "TicketSystem.write" },
                     ApiSecrets = new List<Secret> { new Secret("ScopeSecret".Sha256()) },
                     UserClaims = new List<string> { "role" }
                 }
@@ -39,7 +39,7 @@ namespace Server
                     ClientName = "Client Credentials Client",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets = { new Secret("ClientSecret1".Sha256()) },
-                    AllowedScopes = { "CoffeeAPI.read", "CoffeeAPI.write" }
+                    AllowedScopes = { "TicketSystem.read", "TicketSystem.write" }
                 },
                 // interactive client using code flow + pkce
                 new Client
@@ -51,7 +51,7 @@ namespace Server
                     FrontChannelLogoutUri = "https://localhost:5444/signout-oidc",
                     PostLogoutRedirectUris = { "https://localhost:5444/signout-callback-oidc" },
                     AllowOfflineAccess = true,
-                    AllowedScopes = { "openid", "profile", "CoffeeAPI.read" },
+                    AllowedScopes = { "openid", "profile", "TicketSystem.read" },
                     RequirePkce = true,
                     RequireConsent = true,
                     AllowPlainTextPkce = false
