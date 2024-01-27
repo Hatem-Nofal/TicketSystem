@@ -1,7 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
- using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using TicketSystem.Infrastructure.Context;
+using TicketSystem.Presentation.Interceptors;
 namespace TicketSystem.Application.Configurations;
 
 public static class DatabaseConfig
@@ -11,8 +10,14 @@ public static class DatabaseConfig
         if (services == null) throw new ArgumentNullException(nameof(services));
 
         services.AddDbContext<TicketSystemDbContext>(
-                 options =>
-                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                (sp, options) =>
+                {
+                    var domainEventInterceptors = sp.GetService<DomainEventInterceptor>();
+
+
+                    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+                    .AddInterceptors(domainEventInterceptors);
+                });
         services.AddScoped<TicketSystemDbContext>();
 
 
