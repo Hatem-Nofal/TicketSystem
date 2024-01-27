@@ -119,7 +119,7 @@ namespace TicketSystem.Infrastructure.Migrations
 
             modelBuilder.Entity("TicketSystem.Domain.Tickets.Ticket", b =>
                 {
-                    b.OwnsMany("TicketSystem.Domain.Tickets.Entities.Comment", "Comments", b1 =>
+                    b.OwnsMany("TicketSystem.Domain.Tickets.Ticket.Comments#TicketSystem.Domain.Tickets.Entities.Comment", "Comments", b1 =>
                         {
                             b1.Property<Guid>("Id")
                                 .HasColumnType("uniqueidentifier");
@@ -160,7 +160,7 @@ namespace TicketSystem.Infrastructure.Migrations
                             b1.WithOwner("Ticket")
                                 .HasForeignKey("TicketId");
 
-                            b1.OwnsMany("TicketSystem.Domain.Common.Primitives.DomainEvent", "DomainEvents", b2 =>
+                            b1.OwnsMany("TicketSystem.Domain.Tickets.Ticket.Comments#TicketSystem.Domain.Tickets.Entities.Comment.DomainEvents#TicketSystem.Domain.Common.Primitives.DomainEvent", "DomainEvents", b2 =>
                                 {
                                     b2.Property<Guid>("CommentId")
                                         .HasColumnType("uniqueidentifier");
@@ -171,7 +171,7 @@ namespace TicketSystem.Infrastructure.Migrations
 
                                     b2.HasKey("CommentId", "Id");
 
-                                    b2.ToTable("Comments_DomainEvents");
+                                    b2.ToTable("Comments_DomainEvents", (string)null);
 
                                     b2.WithOwner()
                                         .HasForeignKey("CommentId");
@@ -182,7 +182,7 @@ namespace TicketSystem.Infrastructure.Migrations
                             b1.Navigation("Ticket");
                         });
 
-                    b.OwnsMany("TicketSystem.Domain.Common.Primitives.DomainEvent", "DomainEvents", b1 =>
+                    b.OwnsMany("TicketSystem.Domain.Tickets.Ticket.DomainEvents#TicketSystem.Domain.Common.Primitives.DomainEvent", "DomainEvents", b1 =>
                         {
                             b1.Property<Guid>("TicketId")
                                 .HasColumnType("uniqueidentifier");
@@ -193,13 +193,13 @@ namespace TicketSystem.Infrastructure.Migrations
 
                             b1.HasKey("TicketId", "Id");
 
-                            b1.ToTable("Tickets_DomainEvents");
+                            b1.ToTable("Tickets_DomainEvents", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("TicketId");
                         });
 
-                    b.OwnsMany("TicketSystem.Domain.Tickets.ValueObjects.TicketHistory", "TicketHistories", b1 =>
+                    b.OwnsMany("TicketSystem.Domain.Tickets.Ticket.TicketHistories#TicketSystem.Domain.Tickets.ValueObjects.TicketHistory", "TicketHistories", b1 =>
                         {
                             b1.Property<Guid>("TicketId")
                                 .HasColumnType("uniqueidentifier")
@@ -245,7 +245,24 @@ namespace TicketSystem.Infrastructure.Migrations
 
             modelBuilder.Entity("TicketSystem.Domain.Users.User", b =>
                 {
-                    b.OwnsOne("TicketSystem.Domain.Common.Models.ValueObjects.Email", "Email", b1 =>
+                    b.OwnsMany("TicketSystem.Domain.Users.User.DomainEvents#TicketSystem.Domain.Common.Primitives.DomainEvent", "DomainEvents", b1 =>
+                        {
+                            b1.Property<Guid>("UserId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<Guid>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.HasKey("UserId", "Id");
+
+                            b1.ToTable("Users_DomainEvents", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("UserId");
+                        });
+
+                    b.OwnsOne("TicketSystem.Domain.Users.User.Email#TicketSystem.Domain.Common.Models.ValueObjects.Email", "Email", b1 =>
                         {
                             b1.Property<Guid>("UserId")
                                 .HasColumnType("uniqueidentifier");
@@ -261,13 +278,13 @@ namespace TicketSystem.Infrastructure.Migrations
                             b1.HasIndex("Value")
                                 .IsUnique();
 
-                            b1.ToTable("Users");
+                            b1.ToTable("Users", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("UserId");
                         });
 
-                    b.OwnsOne("TicketSystem.Domain.Common.Models.ValueObjects.Phone", "Phone", b1 =>
+                    b.OwnsOne("TicketSystem.Domain.Users.User.Phone#TicketSystem.Domain.Common.Models.ValueObjects.Phone", "Phone", b1 =>
                         {
                             b1.Property<Guid>("UserId")
                                 .HasColumnType("uniqueidentifier");
@@ -283,24 +300,7 @@ namespace TicketSystem.Infrastructure.Migrations
                             b1.HasIndex("Value")
                                 .IsUnique();
 
-                            b1.ToTable("Users");
-
-                            b1.WithOwner()
-                                .HasForeignKey("UserId");
-                        });
-
-                    b.OwnsMany("TicketSystem.Domain.Common.Primitives.DomainEvent", "DomainEvents", b1 =>
-                        {
-                            b1.Property<Guid>("UserId")
-                                .HasColumnType("uniqueidentifier");
-
-                            b1.Property<Guid>("Id")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("uniqueidentifier");
-
-                            b1.HasKey("UserId", "Id");
-
-                            b1.ToTable("Users_DomainEvents");
+                            b1.ToTable("Users", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("UserId");
