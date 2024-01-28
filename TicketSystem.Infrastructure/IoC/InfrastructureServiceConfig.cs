@@ -1,10 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TicketSystem.Application.Interfaces.Base;
+using TicketSystem.Infrastructure.Data.Base;
 
 namespace TicketSystem.Infrastructure.IoC
 {
@@ -12,7 +9,8 @@ namespace TicketSystem.Infrastructure.IoC
     {
         public static IServiceCollection InfrastructureServiceConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-
+            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             return services;
         }
     }

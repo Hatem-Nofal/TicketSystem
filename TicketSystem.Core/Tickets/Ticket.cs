@@ -23,13 +23,13 @@ public sealed class Ticket : AggregateRoot<TicketId>
 
 
     private HashSet<Comment> _comments = new();
-    private HashSet<TicketHistory> _ticketHistories = new();
+    private static HashSet<TicketHistory> _ticketHistories = new();
 
     public Lazy<IReadOnlyList<Comment>> Comments => new Lazy<IReadOnlyList<Comment>>(_comments.ToList());
     public Lazy<IReadOnlyList<TicketHistory>> TicketHistories => new Lazy<IReadOnlyList<TicketHistory>>(_ticketHistories.ToList());
 
 
-    public Ticket Create(string title, int status, UserId assingTo, string describtion, decimal originalEstimate, int severity)
+    public static Ticket Create(string title, int status, UserId assingTo, string describtion, decimal originalEstimate, int severity)
     {
         var ticket = new Ticket(TicketId.CreateUnique())
         {
@@ -43,7 +43,7 @@ public sealed class Ticket : AggregateRoot<TicketId>
             CompletedWork = default
 
         };
-        CreateTicketHistory();
+        CreateTicketHistory(status, ticket!.Id, assingTo, ticket!.CreatorId);
         ticket.Raise(new TicketCreatedDomainEvent(Guid.NewGuid(), ticket!.Id));
         return ticket;
 
@@ -62,14 +62,14 @@ public sealed class Ticket : AggregateRoot<TicketId>
             Severity = severity,
             CompletedWork = default
         };
-        CreateTicketHistory();
+        CreateTicketHistory(status, ticket!.Id, assingTo, ticket!.CreatorId);
         ticket.Raise(new TicketUpdatedDomainEvent(Guid.NewGuid(), ticket!.Id));
         return ticket;
 
     }
-    public void CreateTicketHistory()
+    public static void CreateTicketHistory(int status, TicketId id, UserId assingTo, UserId creatorId)
     {
-        var ticketHistory = TicketHistory.Create(Status, Id, AssingTo, CreatorId);
+        var ticketHistory = TicketHistory.Create(status, id, assingTo, creatorId);
         _ticketHistories.Add(ticketHistory);
     }
 

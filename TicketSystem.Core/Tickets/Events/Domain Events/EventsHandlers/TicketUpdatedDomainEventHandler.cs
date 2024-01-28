@@ -7,7 +7,7 @@ public sealed class TicketUpdatedDomainEventHandler(Guid Id, TicketId TicketId) 
 {
     public Task Handle(CommentCreatedDomainEvent notification, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        return Task.CompletedTask;
     }
 }
 

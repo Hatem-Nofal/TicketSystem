@@ -1,15 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using TicketSystem.Domain.Common.Models;
 using TicketSystem.Application.Interfaces.Base;
 namespace TicketSystem.Infrastructure.Data.Base;
-public class Repository<T, TId> : IRepository<T, TId> where T : class, TId where TId : notnull
+public class Repository<T> : IRepository<T> where T : class
 {
     private readonly DbContext _context;
 

@@ -22,7 +22,7 @@ public class ProcessOutboxMessagesJob : IJob
     {
         List<OutboxMessage> messages = await _dbContext.Set<OutboxMessage>()
             .Where(x => x.ProcessedOnUtc == null)
-            .Take(20).ToListAsync(context.CancellationToken);
+            .Take(1..20).ToListAsync(context.CancellationToken);
         foreach (OutboxMessage message in messages)
         {
             DomainEvent? domainEvent = JsonConvert

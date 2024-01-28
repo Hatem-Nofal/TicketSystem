@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TicketSystem.Domain.Common.Models;
-using TicketSystem.Domain.Common.Models.ValueObjects;
+﻿using TicketSystem.Domain.Common.Models.ValueObjects;
 using TicketSystem.Domain.Tickets.Enums;
-using TicketSystem.Domain.Tickets.Events;
 using TicketSystem.Domain.Users.ValueObjects;
 
 namespace TicketSystem.Domain.Tickets.ValueObjects;
 
 public sealed class TicketHistory : ValueObject
 {
- 
+
+
     public TicketId TicketId { get; protected set; }
     public StatusEnum Status { get; protected set; }
     public UserId AssingTo { get; protected set; }
@@ -34,7 +27,7 @@ public sealed class TicketHistory : ValueObject
             TicketId = TicketId,
             AssingTo = AssingTo,
             CreatorId = CreatorId
-            
+
         };
         return ticketHistory;
 

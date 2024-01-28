@@ -9,4 +9,5 @@ public abstract class BaseEntity
     protected void Raise(DomainEvent domainEvent) => _domainEvents.Add(domainEvent);
     public void ClearDomainEvents() => _domainEvents.Clear();
 
+
 }

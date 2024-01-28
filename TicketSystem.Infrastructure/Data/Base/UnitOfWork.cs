@@ -1,12 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TicketSystem.Application.Interfaces.Base;
-using TicketSystem.Domain.Common.Models;
 using TicketSystem.Infrastructure.Context;
 
 namespace TicketSystem.Infrastructure.Data.Base;
@@ -25,7 +19,7 @@ public class UnitOfWork : IUnitOfWork
 
     }
 
-    public async Task<bool> Commit()
+    public async Task<bool> CommitAsync()
     {
         var save = await _context.SaveChangesAsync();
         if (save > 0)
@@ -50,7 +44,7 @@ public class UnitOfWork : IUnitOfWork
     public void RollBackTransaction()
     {
         transaction.Rollback();
- 
+
     }
 
 
@@ -62,7 +56,7 @@ public class UnitOfWork : IUnitOfWork
 
     public void Dispose()
     {
-         Dispose(true);
+        Dispose(true);
         GC.SuppressFinalize(this);
     }
 
@@ -74,7 +68,7 @@ public class UnitOfWork : IUnitOfWork
         _disposed = true;
     }
 
-    public IRepository<TEntity, TId> Repository<TEntity, TId>() where TEntity : class, TId where TId : notnull
+    public IRepository<TEntity> Repository<TEntity>() where TEntity : class
     {
         if (_repositories == null) _repositories = new Hashtable();
 
@@ -84,14 +78,14 @@ public class UnitOfWork : IUnitOfWork
         // Check whether hash table contains entry with this name
         if (!_repositories.ContainsKey(type))
         {
-            var repositoryType = typeof(Repository<,>);
+            var repositoryType = typeof(Repository<>);
             // If we don't have a repository for this type, then create a instance of that repo
             var repositoryInstance = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(TEntity)), _context);
             _repositories.Add(type, repositoryInstance);
         }
 
-        return (IRepository<TEntity, TId>)_repositories[type];
+        return (IRepository<TEntity>)_repositories[type];
     }
 
 }
- 
+

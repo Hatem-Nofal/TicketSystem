@@ -11,12 +11,12 @@ public class Program
         try
         {
 
-            Log.Information("Transaction Api started ...");
+            Log.Information("TicketSystem Api started ...");
             CreateHostBuilder(args).Build().Run();
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Transaction Api failed to start ...");
+            Log.Error(ex, "TicketSystem Api failed to start ...");
         }
         finally
         {
