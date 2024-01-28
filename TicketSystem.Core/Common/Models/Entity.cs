@@ -8,7 +8,7 @@ public abstract class Entity<TId> : BaseEntity, IEquatable<Entity<TId>> where TI
     public DateTime CreatedAt { get; set; }
     public DateTime? ModifiedAt { get; set; }
     public DateTime? DeletedAt { get; set; }
-    public UserId ModifierId { get; set; }
+    public UserId? ModifierId { get; set; }
 
 
 

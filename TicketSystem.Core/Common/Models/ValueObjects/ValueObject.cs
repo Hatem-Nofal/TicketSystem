@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TicketSystem.Domain.Users.ValueObjects;
-
-namespace TicketSystem.Domain.Common.Models.ValueObjects;
-public abstract class ValueObject :  IEquatable<ValueObject>
+﻿namespace TicketSystem.Domain.Common.Models.ValueObjects;
+public abstract class ValueObject : IEquatable<ValueObject>
 {
     public abstract IEnumerable<object> GetEqualityComponents();
-    public DateTime CreatedAt { get; set; }= DateTime.Now;
     public override bool Equals(object? obj)
     {
         if (obj is null || obj.GetType() != GetType())

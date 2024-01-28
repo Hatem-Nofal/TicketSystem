@@ -3,9 +3,9 @@ using TicketSystem.Domain.Tickets.ValueObjects;
 
 namespace TicketSystem.Domain.Tickets.Events.EventsHandlers;
 public sealed class TicketUpdatedDomainEventHandler(Guid Id, TicketId TicketId) :
-    INotificationHandler<CommentCreatedDomainEvent>
+    INotificationHandler<TicketUpdatedDomainEvent>
 {
-    public Task Handle(CommentCreatedDomainEvent notification, CancellationToken cancellationToken)
+    public Task Handle(TicketUpdatedDomainEvent notification, CancellationToken cancellationToken)
     {
         return Task.CompletedTask;
     }

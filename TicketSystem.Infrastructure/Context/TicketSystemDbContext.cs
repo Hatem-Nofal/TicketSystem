@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Shared.Models.Outbox;
 using TicketSystem.Domain.Tickets;
 using TicketSystem.Domain.Users;
 using TicketSystem.Infrastructure.EntityConfigurations.Tickets;
@@ -39,6 +40,7 @@ public class TicketSystemDbContext : DbContext
 
     public virtual DbSet<Ticket> Tickets { get; set; }
     public virtual DbSet<User> Users { get; set; }
+    public virtual DbSet<OutboxMessage> OutboxMessages { get; set; }
 
 
 }

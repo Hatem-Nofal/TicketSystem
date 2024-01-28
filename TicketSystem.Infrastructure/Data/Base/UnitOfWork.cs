@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
 using System.Collections;
 using TicketSystem.Application.Interfaces.Base;
+using TicketSystem.Domain.Common.Models;
 using TicketSystem.Infrastructure.Context;
 
 namespace TicketSystem.Infrastructure.Data.Base;
@@ -9,6 +10,12 @@ public class UnitOfWork : IUnitOfWork
     public readonly TicketSystemDbContext _context;
 
     IDbContextTransaction transaction;
+
+    public UnitOfWork(IDbContextTransaction transaction)
+    {
+        this.transaction = transaction;
+    }
+
     private Hashtable _repositories;
     private bool _disposed;
 
@@ -68,7 +75,7 @@ public class UnitOfWork : IUnitOfWork
         _disposed = true;
     }
 
-    public IRepository<TEntity> Repository<TEntity>() where TEntity : class
+    public IRepository<TEntity> Repository<TEntity>() where TEntity : BaseEntity
     {
         if (_repositories == null) _repositories = new Hashtable();
 

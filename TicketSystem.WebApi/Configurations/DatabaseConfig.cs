@@ -9,14 +9,14 @@ public static class DatabaseConfig
     {
         if (services == null) throw new ArgumentNullException(nameof(services));
 
+        services.AddSingleton<DomainEventInterceptor>();
+        services.AddSingleton<OutboxMessageInterceptor>();
+
         services.AddDbContext<TicketSystemDbContext>(
                 (sp, options) =>
                 {
-                    var domainEventInterceptors = sp.GetService<DomainEventInterceptor>();
-
-
                     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
-                    .AddInterceptors(domainEventInterceptors);
+                   .AddInterceptors(sp.GetService<DomainEventInterceptor>(), sp.GetService<OutboxMessageInterceptor>());
                 });
         services.AddScoped<TicketSystemDbContext>();
 

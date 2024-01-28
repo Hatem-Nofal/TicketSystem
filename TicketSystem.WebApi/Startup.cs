@@ -1,12 +1,5 @@
-﻿using FluentValidation;
-using MediatR;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.AspNetCore.Http.Features;
-using Microsoft.AspNetCore.SignalR;
-using Microsoft.Extensions.Options;
-using Microsoft.OpenApi.Models;
-using System.Text.Json.Serialization;
+﻿using MediatR;
+using MediatR.NotificationPublishers;
 using TicketSystem.Application.Configurations;
 using TicketSystem.WebApi.Configurations;
 
@@ -60,6 +53,14 @@ namespace TicketSystem.WebApi
             services.AddMediatR(cfg =>
             {
                 cfg.RegisterServicesFromAssemblies(typeof(Startup).Assembly, applicationAsAmbly);
+                // Setting the publisher directly will make the instance a Singleton.
+                cfg.NotificationPublisher = new TaskWhenAllPublisher();
+
+                // Seting the publisher type will:
+                // 1. Override the value set on NotificationPublisher
+                // 2. Use the service lifetime from the ServiceLifetime property below
+                cfg.NotificationPublisherType = typeof(TaskWhenAllPublisher);
+
             });
             services.AddControllersWithViews();
 

@@ -1,7 +1,8 @@
 ﻿using System.Linq.Expressions;
+using TicketSystem.Domain.Common.Models;
 
 namespace TicketSystem.Application.Interfaces.Base;
-public interface IRepository<T> where T : class
+public interface IRepository<T> where T : BaseEntity
 {
     void Add(T entity);
     void Update(T entity);

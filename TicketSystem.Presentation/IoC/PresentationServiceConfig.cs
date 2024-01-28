@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TicketSystem.Presentation.Interceptors;
+using TicketSystem.Presentation.BackgroundJobs;
 
 namespace TicketSystem.Presentation.IoC
 {
@@ -9,7 +9,7 @@ namespace TicketSystem.Presentation.IoC
     {
         public static IServiceCollection PresentationServiceConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton<DomainEventInterceptor>();
+            services.AddScoped<IprocessOutboxMessagesJob, ProcessOutboxMessagesJob>();
             return services;
         }
     }

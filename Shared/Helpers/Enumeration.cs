@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 
 namespace Shared.Helpers;
 public abstract class Enumeration<TEnum> : IEquatable<Enumeration<TEnum>> where TEnum : Enumeration<TEnum>
 {
 
     private static readonly Dictionary<int, TEnum> Enumerations = CreateEnumeration();
-    public Enumeration(int value,string name)
+    public Enumeration(int value, string name)
     {
 
         Name = name;
@@ -56,7 +51,7 @@ public abstract class Enumeration<TEnum> : IEquatable<Enumeration<TEnum>> where 
         var fieldsForType = enumerationType
              .GetFields(
                 BindingFlags.Public |
-                BindingFlags.Static|
+                BindingFlags.Static |
                 BindingFlags.FlattenHierarchy).
          Where(fieldInfo =>
             enumerationType.IsAssignableFrom(fieldInfo.FieldType))

@@ -1,5 +1,6 @@
 ﻿using TicketSystem.Domain.Common.Models;
 using TicketSystem.Domain.Tickets.Entities;
+using TicketSystem.Domain.Tickets.Enums;
 using TicketSystem.Domain.Tickets.Events;
 using TicketSystem.Domain.Tickets.ValueObjects;
 using TicketSystem.Domain.Users.ValueObjects;
@@ -18,15 +19,12 @@ public sealed class Ticket : AggregateRoot<TicketId>
     public decimal RemainingWork { get; protected set; }
     public decimal CompletedWork { get; protected set; }
     public int Severity { get; protected set; }
+    private List<Comment> _comments = new();
+    private List<TicketHistory> _ticketHistories = new();
 
+    public IReadOnlyList<Comment> Comments => _comments.ToList();
+    public IReadOnlyList<TicketHistory> TicketHistories => _ticketHistories.ToList();
 
-
-
-    private HashSet<Comment> _comments = new();
-    private static HashSet<TicketHistory> _ticketHistories = new();
-
-    public Lazy<IReadOnlyList<Comment>> Comments => new Lazy<IReadOnlyList<Comment>>(_comments.ToList());
-    public Lazy<IReadOnlyList<TicketHistory>> TicketHistories => new Lazy<IReadOnlyList<TicketHistory>>(_ticketHistories.ToList());
 
 
     public static Ticket Create(string title, int status, UserId assingTo, string describtion, decimal originalEstimate, int severity)
@@ -40,10 +38,13 @@ public sealed class Ticket : AggregateRoot<TicketId>
             OriginalEstimate = originalEstimate,
             RemainingWork = default,
             Severity = severity,
-            CompletedWork = default
+            CompletedWork = default,
+            CreatorId = assingTo,
+            ModifierId = assingTo
+
 
         };
-        CreateTicketHistory(status, ticket!.Id, assingTo, ticket!.CreatorId);
+        ticket.CreateTicketHistory(status, ticket!.Id, assingTo, ticket!.CreatorId);
         ticket.Raise(new TicketCreatedDomainEvent(Guid.NewGuid(), ticket!.Id));
         return ticket;
 
@@ -62,15 +63,18 @@ public sealed class Ticket : AggregateRoot<TicketId>
             Severity = severity,
             CompletedWork = default
         };
-        CreateTicketHistory(status, ticket!.Id, assingTo, ticket!.CreatorId);
+        ticket.CreateTicketHistory(status, ticket!.Id, assingTo, ticket!.CreatorId);
         ticket.Raise(new TicketUpdatedDomainEvent(Guid.NewGuid(), ticket!.Id));
         return ticket;
 
     }
-    public static void CreateTicketHistory(int status, TicketId id, UserId assingTo, UserId creatorId)
+    public void CreateTicketHistory(int status, TicketId id, UserId assingTo, UserId creatorId)
     {
-        var ticketHistory = TicketHistory.Create(status, id, assingTo, creatorId);
+        var ticketHistory = TicketHistory.Create(StatusEnum.FromValue(status)!, id, assingTo, creatorId);
+
         _ticketHistories.Add(ticketHistory);
+
+
     }
 
     public void CreateComment(string Body)
@@ -93,5 +97,13 @@ public sealed class Ticket : AggregateRoot<TicketId>
         comment.Update(Body);
     }
 
+    public Lazy<IReadOnlyList<Comment>> GetComments()
+    {
+        return new Lazy<IReadOnlyList<Comment>>(_comments.ToList());
+    }
+    public Lazy<IReadOnlyList<TicketHistory>> GetTicketHistory()
+    {
+        return new Lazy<IReadOnlyList<TicketHistory>>(_ticketHistories.ToList());
+    }
 }
 

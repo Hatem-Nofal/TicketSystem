@@ -13,6 +13,7 @@ public sealed class TicketHistory : ValueObject
     public UserId AssingTo { get; protected set; }
     public UserId CreatorId { get; protected set; }
     public Ticket Ticket { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.Now;
 
     public override IEnumerable<object> GetEqualityComponents()
     {
@@ -33,8 +34,5 @@ public sealed class TicketHistory : ValueObject
 
     }
 
-    internal static TicketHistory Create(int status, TicketId id, UserId assingTo, UserId creatorId)
-    {
-        throw new NotImplementedException();
-    }
+
 }

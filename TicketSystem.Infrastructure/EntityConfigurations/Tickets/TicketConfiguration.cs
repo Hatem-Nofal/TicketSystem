@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TicketSystem.Domain.Tickets;
+using TicketSystem.Domain.Tickets.Enums;
 using TicketSystem.Domain.Tickets.ValueObjects;
 using TicketSystem.Domain.Users.ValueObjects;
 
@@ -55,16 +56,21 @@ internal sealed class TicketConfiguration : IEntityTypeConfiguration<Ticket>
 
     private void TicketHistoryConfigure(EntityTypeBuilder<Ticket> builder)
     {
-        builder.OwnsMany(ticket => ticket.TicketHistories.Value,
+        builder.OwnsMany(ticket => ticket.TicketHistories,
                         navigationBuilder =>
                         {
                             navigationBuilder.ToTable("TicketHistories");
+                            navigationBuilder.Property(d => d.Status).ValueGeneratedNever()
+                                    .HasConversion(
+                                        id => id.Value,
+                                        value => StatusEnum.FromValue(value)).HasColumnName("Status");
 
                             navigationBuilder.Property(d => d.AssingTo)
                                     .ValueGeneratedNever()
                                     .HasConversion(
                                         id => id.Value,
                                         value => UserId.Create(value)).HasColumnName("AssingTo");
+
                             navigationBuilder.Property(d => d.CreatorId)
                                   .ValueGeneratedNever()
                                   .HasConversion(
@@ -89,7 +95,7 @@ internal sealed class TicketConfiguration : IEntityTypeConfiguration<Ticket>
     }
     private void CommentConfigure(EntityTypeBuilder<Ticket> builder)
     {
-        builder.OwnsMany(ticket => ticket.Comments.Value,
+        builder.OwnsMany(ticket => ticket.Comments,
                         navigationBuilder =>
                         {
                             navigationBuilder.ToTable("Comments");
