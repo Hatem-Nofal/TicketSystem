@@ -29,9 +29,9 @@ public class TicketSystemDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
 
-
-
         builder.ApplyConfiguration(new TicketConfiguration());
+
+        builder.ApplyConfiguration(new OutboxMessageConfiguration());
         // builder.ApplyConfiguration(new CommentsConfiguration());
         builder.ApplyConfiguration(new UsersConfiguration());
 

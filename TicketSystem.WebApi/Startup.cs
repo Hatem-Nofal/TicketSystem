@@ -53,6 +53,7 @@ namespace TicketSystem.WebApi
             services.AddMediatR(cfg =>
             {
                 cfg.RegisterServicesFromAssemblies(typeof(Startup).Assembly, applicationAsAmbly);
+
                 // Setting the publisher directly will make the instance a Singleton.
                 cfg.NotificationPublisher = new TaskWhenAllPublisher();
 

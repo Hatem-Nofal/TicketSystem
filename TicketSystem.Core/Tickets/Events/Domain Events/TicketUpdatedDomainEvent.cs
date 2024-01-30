@@ -1,5 +1,6 @@
 ﻿using TicketSystem.Domain.Common.Primitives;
+using TicketSystem.Domain.Tickets.ValueObjects;
 
 namespace TicketSystem.Domain.Tickets.Events;
-public sealed record TicketUpdatedDomainEvent(Guid Id, Guid TicketId) : DomainEvent(Id);
+public record TicketUpdatedDomainEvent(Guid Id, TicketId TicketId) : DomainEvent;
 
