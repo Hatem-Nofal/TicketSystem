@@ -13,6 +13,7 @@ public abstract class Entity<TId> : BaseEntity, IEquatable<Entity<TId>> where TI
 
 
 
+
     protected Entity(TId id) => Id = id;
 
     public override bool Equals(object? obj) => obj is Entity<TId> entity && Id.Equals(entity.Id);

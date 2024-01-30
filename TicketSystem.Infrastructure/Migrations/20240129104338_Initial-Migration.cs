@@ -6,11 +6,27 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TicketSystem.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "OutboxMessages",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    OccuredOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ProcessedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Error = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OutboxMessages", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Tickets",
                 columns: table => new
@@ -28,7 +44,7 @@ namespace TicketSystem.Infrastructure.Migrations
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    ModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -49,7 +65,7 @@ namespace TicketSystem.Infrastructure.Migrations
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    ModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -67,7 +83,7 @@ namespace TicketSystem.Infrastructure.Migrations
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    ModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -180,6 +196,9 @@ namespace TicketSystem.Infrastructure.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Comments_DomainEvents");
+
+            migrationBuilder.DropTable(
+                name: "OutboxMessages");
 
             migrationBuilder.DropTable(
                 name: "TicketHistories");

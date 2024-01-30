@@ -31,12 +31,26 @@ public class ProcessOutboxMessagesJob : IprocessOutboxMessagesJob
             foreach (OutboxMessage message in messages)
             {
                 DomainEvent? domainEvent = JsonConvert
-                    .DeserializeObject<DomainEvent>(message.Content);
+                    .DeserializeObject<DomainEvent>(message.Content, new JsonSerializerSettings
+                    {
+                        TypeNameHandling = TypeNameHandling.All
+
+                    });
                 if (domainEvent is null)
                 {
                     continue;
                 }
-                await _publisher.Publish(domainEvent, cancellationToken);
+
+                try
+                {
+                    await _publisher.Publish(domainEvent, cancellationToken);
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+                }
                 message.ProcessedOnUtc = DateTime.UtcNow;
 
             }

@@ -20,19 +20,28 @@ public sealed class OutboxMessageInterceptor : SaveChangesInterceptor
         {
             await InsertInOutboxMessages(dbContext);
         }
-
-        return await base.SavingChangesAsync(eventData, result, cancellationToken);
+        var res = await base.SavingChangesAsync(eventData, result, cancellationToken);
+        dbContext.ChangeTracker.Entries<BaseEntity>()
+               .Select(x => x.Entity)
+               .SelectMany(e =>
+               {
+                   List<DomainEvent> domainEvents = e.DomainEvents.ToList();
+                   e.ClearDomainEvents();
+                   return domainEvents;
+               });
+        return res;
     }
+
 
     private static async Task InsertInOutboxMessages(DbContext dbContext)
     {
+
         DateTime utcNow = DateTime.UtcNow;
         var outboxMessages = dbContext.ChangeTracker.Entries<BaseEntity>()
                 .Select(x => x.Entity)
                 .SelectMany(e =>
                 {
                     List<DomainEvent> domainEvents = e.DomainEvents.ToList();
-                    e.ClearDomainEvents();
                     return domainEvents;
                 }).Select(domainEvent => new OutboxMessage
                 {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TicketSystem.Domain.Common.Models;
-using TicketSystem.Domain.Common.Models.ValueObjects;
+﻿using TicketSystem.Domain.Common.Models;
 using TicketSystem.Domain.Tickets.Events;
 using TicketSystem.Domain.Tickets.ValueObjects;
 using TicketSystem.Domain.Users.ValueObjects;
@@ -23,14 +17,14 @@ public sealed class Comment : Entity<CommentId>
     public string Body { get; protected set; }
     public TicketId TicketId { get; protected set; }
     public Ticket Ticket { get; protected set; }
- 
-    public static Comment Create(string Body, TicketId TicketId , UserId CreatorId)
+
+    public static Comment Create(string Body, TicketId TicketId, UserId CreatorId)
     {
         var comment = new Comment(CommentId.CreateUnique());
         comment.Body = Body;
         comment.TicketId = TicketId;
-        comment.CreatorId= CreatorId;
-         comment.Raise(new CommentCreatedDomainEvent(Guid.NewGuid(), comment!.Id));
+        comment.CreatorId = CreatorId;
+        comment.Raise(new CommentCreatedDomainEvent(Guid.NewGuid(), comment!.Id.Value));
         return comment;
 
     }

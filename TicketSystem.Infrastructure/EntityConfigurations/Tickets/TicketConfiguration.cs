@@ -22,7 +22,6 @@ internal sealed class TicketConfiguration : IEntityTypeConfiguration<Ticket>
 
         builder.ToTable("Tickets");
         builder.HasKey(d => d.Id);
-
         builder.Property(d => d.Id)
                 .ValueGeneratedNever()
                 .HasConversion(

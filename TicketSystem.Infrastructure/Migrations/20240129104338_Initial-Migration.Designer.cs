@@ -12,8 +12,8 @@ using TicketSystem.Infrastructure.Context;
 namespace TicketSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(TicketSystemDbContext))]
-    [Migration("20240128212341_update")]
-    partial class update
+    [Migration("20240129104338_Initial-Migration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
