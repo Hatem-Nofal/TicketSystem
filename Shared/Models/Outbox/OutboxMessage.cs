@@ -1,7 +1,7 @@
 ﻿namespace Shared.Models.Outbox;
 public sealed class OutboxMessage
 {
-    public Guid Id { get; set; }
+    public int Id { get; set; }
     public string Type { get; set; } = string.Empty;
     public string Content { get; set; } = string.Empty;
     public DateTime OccuredOnUtc { get; set; }

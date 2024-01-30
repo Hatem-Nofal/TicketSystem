@@ -2,7 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using TicketSystem.Application.Interfaces.Base;
 using TicketSystem.Infrastructure.Data.Base;
-
 namespace TicketSystem.Infrastructure.IoC
 {
     public static class InfrastructureServiceConfig
@@ -11,6 +10,7 @@ namespace TicketSystem.Infrastructure.IoC
         {
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
             return services;
         }
     }

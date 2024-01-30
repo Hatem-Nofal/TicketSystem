@@ -24,9 +24,11 @@ namespace TicketSystem.Infrastructure.Migrations
 
             modelBuilder.Entity("Shared.Models.Outbox.OutboxMessage", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -47,7 +49,7 @@ namespace TicketSystem.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OutboxMessages");
+                    b.ToTable("OutboxMessages", (string)null);
                 });
 
             modelBuilder.Entity("TicketSystem.Domain.Tickets.Ticket", b =>
@@ -193,9 +195,11 @@ namespace TicketSystem.Infrastructure.Migrations
                                     b2.Property<Guid>("CommentId")
                                         .HasColumnType("uniqueidentifier");
 
-                                    b2.Property<Guid>("Id")
+                                    b2.Property<int>("Id")
                                         .ValueGeneratedOnAdd()
-                                        .HasColumnType("uniqueidentifier");
+                                        .HasColumnType("int");
+
+                                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b2.Property<int>("Id"));
 
                                     b2.HasKey("CommentId", "Id");
 
@@ -215,9 +219,11 @@ namespace TicketSystem.Infrastructure.Migrations
                             b1.Property<Guid>("TicketId")
                                 .HasColumnType("uniqueidentifier");
 
-                            b1.Property<Guid>("Id")
+                            b1.Property<int>("Id")
                                 .ValueGeneratedOnAdd()
-                                .HasColumnType("uniqueidentifier");
+                                .HasColumnType("int");
+
+                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
 
                             b1.HasKey("TicketId", "Id");
 
@@ -323,9 +329,11 @@ namespace TicketSystem.Infrastructure.Migrations
                             b1.Property<Guid>("UserId")
                                 .HasColumnType("uniqueidentifier");
 
-                            b1.Property<Guid>("Id")
+                            b1.Property<int>("Id")
                                 .ValueGeneratedOnAdd()
-                                .HasColumnType("uniqueidentifier");
+                                .HasColumnType("int");
+
+                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
 
                             b1.HasKey("UserId", "Id");
 
