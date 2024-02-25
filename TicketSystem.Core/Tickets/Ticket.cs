@@ -45,7 +45,7 @@ public sealed class Ticket : AggregateRoot<TicketId>
 
         };
         ticket.CreateTicketHistory(status, ticket!.Id, assingTo, ticket!.CreatorId);
-        ticket.Raise(new TicketCreatedDomainEvent(Guid.NewGuid(), ticket!.Id.Value));
+        ticket.Raise(new TicketCreatedDomainEvent(Guid.NewGuid(), ticket!.Id));
         return ticket;
 
     }
@@ -64,7 +64,7 @@ public sealed class Ticket : AggregateRoot<TicketId>
             CompletedWork = default
         };
         ticket.CreateTicketHistory(status, ticket!.Id, assingTo, ticket!.CreatorId);
-        ticket.Raise(new TicketUpdatedDomainEvent(Guid.NewGuid(), ticket!.Id.Value));
+        ticket.Raise(new TicketUpdatedDomainEvent(Guid.NewGuid(), ticket!.Id));
         return ticket;
 
     }

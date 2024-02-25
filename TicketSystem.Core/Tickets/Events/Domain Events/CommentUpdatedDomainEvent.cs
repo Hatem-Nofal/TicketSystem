@@ -2,5 +2,5 @@
 using TicketSystem.Domain.Tickets.ValueObjects;
 
 namespace TicketSystem.Domain.Tickets.Events;
-public record CommentUpdatedDomainEvent(Guid Id, CommentId CommentId) : DomainEvent;
+public record CommentUpdatedDomainEvent(Guid Id, CommentId CommentId) : IDomainEvent;
 
