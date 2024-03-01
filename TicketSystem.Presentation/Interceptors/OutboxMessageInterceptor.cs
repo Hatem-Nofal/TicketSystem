@@ -25,7 +25,7 @@ public sealed class OutboxMessageInterceptor : SaveChangesInterceptor
                .Select(x => x.Entity)
                .SelectMany(e =>
                {
-                   List<DomainEvent> domainEvents = e.DomainEvents.ToList();
+                   List<IDomainEvent> domainEvents = e.DomainEvents.ToList();
                    e.ClearDomainEvents();
                    return domainEvents;
                });
@@ -41,7 +41,7 @@ public sealed class OutboxMessageInterceptor : SaveChangesInterceptor
                 .Select(x => x.Entity)
                 .SelectMany(e =>
                 {
-                    List<DomainEvent> domainEvents = e.DomainEvents.ToList();
+                    List<IDomainEvent> domainEvents = e.DomainEvents.ToList();
                     return domainEvents;
                 }).Select(domainEvent => new OutboxMessage
                 {

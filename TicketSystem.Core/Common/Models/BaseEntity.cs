@@ -5,9 +5,9 @@ namespace TicketSystem.Domain.Common.Models;
 public abstract class BaseEntity
 {
 
-    private readonly List<DomainEvent> _domainEvents = new();
-    public List<DomainEvent> DomainEvents => _domainEvents.ToList();
-    protected void Raise(DomainEvent domainEvent) => _domainEvents.Add(domainEvent);
+    private readonly List<IDomainEvent> _domainEvents = new();
+    public List<IDomainEvent> DomainEvents => _domainEvents.ToList();
+    protected void Raise(IDomainEvent domainEvent) => _domainEvents.Add(domainEvent);
     public void ClearDomainEvents() => _domainEvents.Clear();
 
 

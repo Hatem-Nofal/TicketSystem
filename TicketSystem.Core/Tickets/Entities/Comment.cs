@@ -24,7 +24,7 @@ public sealed class Comment : Entity<CommentId>
         comment.Body = Body;
         comment.TicketId = TicketId;
         comment.CreatorId = CreatorId;
-        comment.Raise(new CommentCreatedDomainEvent(comment!.Id));
+        comment.Raise(new CommentCreatedDomainEvent(Guid.NewGuid(), comment!.Id));
         return comment;
 
     }
