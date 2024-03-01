@@ -51,7 +51,10 @@ public sealed class OutboxMessageInterceptor : SaveChangesInterceptor
                     Content = JsonConvert.SerializeObject(domainEvent
                     , new JsonSerializerSettings
                     {
-                        TypeNameHandling = TypeNameHandling.Objects
+                        TypeNameHandling = TypeNameHandling.Objects,
+                        PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                        Formatting = Formatting.Indented
 
                     }
                     ),

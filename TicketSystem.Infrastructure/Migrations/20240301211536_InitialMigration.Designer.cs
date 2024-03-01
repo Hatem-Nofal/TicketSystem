@@ -12,7 +12,7 @@ using TicketSystem.Infrastructure.Context;
 namespace TicketSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(TicketSystemDbContext))]
-    [Migration("20240225134125_InitialMigration")]
+    [Migration("20240301211536_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -27,11 +27,9 @@ namespace TicketSystem.Infrastructure.Migrations
 
             modelBuilder.Entity("Shared.Models.Outbox.OutboxMessage", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Content")
                         .IsRequired()
