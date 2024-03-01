@@ -43,6 +43,7 @@ public class ProcessOutboxMessagesJob : IprocessOutboxMessagesJob
 
                 try
                 {
+
                     await _publisher.Publish(domainEvent, cancellationToken);
 
                 }

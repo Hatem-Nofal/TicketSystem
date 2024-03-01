@@ -1,16 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TicketSystem.Domain.Tickets;
-using TicketSystem.Domain.Tickets.ValueObjects;
-using TicketSystem.Domain.Users.ValueObjects;
-using System.Xml.Linq;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TicketSystem.Domain.Users;
-using TicketSystem.Domain.Common.Models.ValueObjects;
+using TicketSystem.Domain.Users.ValueObjects;
 
 namespace TicketSystem.Infrastructure.EntityConfigurations.Tickets;
 
@@ -25,6 +16,7 @@ internal sealed class UsersConfiguration : IEntityTypeConfiguration<User>
     private void UserConfigure(EntityTypeBuilder<User> builder)
     {
         builder.ToTable("Users");
+
         builder.HasKey(d => d.Id);
 
         builder.Property(d => d.Id)
@@ -69,7 +61,6 @@ internal sealed class UsersConfiguration : IEntityTypeConfiguration<User>
 
 
                         });
-        builder.OwnsMany(c => c.DomainEvents);
 
 
     }
