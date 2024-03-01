@@ -12,13 +12,8 @@ using TicketSystem.Infrastructure.Context;
 namespace TicketSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(TicketSystemDbContext))]
-<<<<<<<< HEAD:TicketSystem.Infrastructure/Migrations/20240129104338_Initial-Migration.Designer.cs
-    [Migration("20240129104338_Initial-Migration")]
-    partial class InitialMigration
-========
-    [Migration("20240130202722_Init")]
+    [Migration("20240130214854_Init")]
     partial class Init
->>>>>>>> 7a5cdcda9d51219945f33b5838a4dba12c09ad88:TicketSystem.Infrastructure/Migrations/20240130202722_Init.Designer.cs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,11 +27,9 @@ namespace TicketSystem.Infrastructure.Migrations
 
             modelBuilder.Entity("Shared.Models.Outbox.OutboxMessage", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Content")
                         .IsRequired()

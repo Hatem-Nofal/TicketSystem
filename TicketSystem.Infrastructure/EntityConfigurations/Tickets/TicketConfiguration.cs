@@ -48,7 +48,7 @@ internal sealed class TicketConfiguration : IEntityTypeConfiguration<Ticket>
         builder.Property(m => m.Title).HasMaxLength(100);
         builder.Property(m => m.Describtion).HasMaxLength(250);
         builder.OwnsMany(c => c.DomainEvents);
-
+        builder.Property(c => c.CreatedAt).HasColumnName("CreatedAt");
         // builder.HasMany(d => d.Comments).WithOne().HasForeignKey(x => x.TicketId);
 
     }

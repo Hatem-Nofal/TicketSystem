@@ -3,9 +3,13 @@
 namespace TicketSystem.Domain.Common.Models;
 public abstract class Entity<TId> : BaseEntity, IEquatable<Entity<TId>> where TId : notnull
 {
+    public Entity()
+    {
+        CreatedAt = DateTime.Now;
+    }
     public TId Id { get; protected set; }
     public UserId CreatorId { get; set; }
-    public DateTime CreatedAt { get; set; }
+    public DateTime CreatedAt { get; protected set; }
     public DateTime? ModifiedAt { get; set; }
     public DateTime? DeletedAt { get; set; }
     public UserId? ModifierId { get; set; }

@@ -6,11 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TicketSystem.Infrastructure.Migrations
 {
     /// <inheritdoc />
-<<<<<<<< HEAD:TicketSystem.Infrastructure/Migrations/20240129104338_Initial-Migration.cs
-    public partial class InitialMigration : Migration
-========
     public partial class Init : Migration
->>>>>>>> 7a5cdcda9d51219945f33b5838a4dba12c09ad88:TicketSystem.Infrastructure/Migrations/20240130202722_Init.cs
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,12 +15,7 @@ namespace TicketSystem.Infrastructure.Migrations
                 name: "OutboxMessages",
                 columns: table => new
                 {
-<<<<<<<< HEAD:TicketSystem.Infrastructure/Migrations/20240129104338_Initial-Migration.cs
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-========
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
->>>>>>>> 7a5cdcda9d51219945f33b5838a4dba12c09ad88:TicketSystem.Infrastructure/Migrations/20240130202722_Init.cs
                     Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     OccuredOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
