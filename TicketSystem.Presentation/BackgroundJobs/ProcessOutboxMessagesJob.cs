@@ -33,7 +33,8 @@ public class ProcessOutboxMessagesJob : IprocessOutboxMessagesJob
                 IDomainEvent? domainEvent = JsonConvert
                     .DeserializeObject<IDomainEvent>(message.Content, new JsonSerializerSettings
                     {
-                        TypeNameHandling = TypeNameHandling.All
+                        TypeNameHandling = TypeNameHandling.All,
+
 
                     });
                 if (domainEvent is null)

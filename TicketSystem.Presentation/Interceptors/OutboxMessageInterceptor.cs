@@ -45,15 +45,16 @@ public sealed class OutboxMessageInterceptor : SaveChangesInterceptor
                     return domainEvents;
                 }).Select(domainEvent => new OutboxMessage
                 {
+                    Id = Guid.NewGuid(),
                     OccuredOnUtc = utcNow,
                     Type = domainEvent.GetType().Name,
                     Content = JsonConvert.SerializeObject(domainEvent
                     , new JsonSerializerSettings
                     {
-                        TypeNameHandling = TypeNameHandling.All
+                        TypeNameHandling = TypeNameHandling.Objects
 
                     }
-                    )
+                    ),
                 })
                 .ToList();
         await dbContext.Set<OutboxMessage>().AddRangeAsync(outboxMessages);
