@@ -13,6 +13,7 @@ public class Program
 
             Log.Information("TicketSystem Api started ...");
             CreateHostBuilder(args).Build().Run();
+
         }
         catch (Exception ex)
         {

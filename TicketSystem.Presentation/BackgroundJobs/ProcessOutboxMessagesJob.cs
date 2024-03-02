@@ -25,40 +25,32 @@ public class ProcessOutboxMessagesJob : IprocessOutboxMessagesJob
     {
         try
         {
-            List<OutboxMessage> messages = await _dbContext.Set<OutboxMessage>()
-              .Where(x => x.ProcessedOnUtc == null)
-              .Take(20).ToListAsync(cancellationToken);
-            foreach (OutboxMessage message in messages)
+            List<OutboxMessage> messages = await _dbContext
+          .Set<OutboxMessage>()
+          .Where(m => m.ProcessedOnUtc == null)
+          .Take(20)
+          .ToListAsync(cancellationToken);
+
+            foreach (OutboxMessage outboxMessage in messages)
             {
                 IDomainEvent? domainEvent = JsonConvert
-                    .DeserializeObject<IDomainEvent>(message.Content, new JsonSerializerSettings
-                    {
-                        TypeNameHandling = TypeNameHandling.Objects,
-                        PreserveReferencesHandling = PreserveReferencesHandling.Objects,
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-                        Formatting = Formatting.Indented
+                    .DeserializeObject<IDomainEvent>(
+                        outboxMessage.Content,
+                        new JsonSerializerSettings
+                        {
+                            TypeNameHandling = TypeNameHandling.All
+                        });
 
-
-                    });
                 if (domainEvent is null)
                 {
                     continue;
                 }
 
-                try
-                {
+                await _publisher.Publish(domainEvent, cancellationToken);
 
-                    await _publisher.Publish(domainEvent, cancellationToken);
-
-                }
-                catch (Exception ex)
-                {
-
-                    throw;
-                }
-                message.ProcessedOnUtc = DateTime.UtcNow;
-
+                outboxMessage.ProcessedOnUtc = DateTime.UtcNow;
             }
+
             await _dbContext.SaveChangesAsync();
         }
         catch (Exception e)

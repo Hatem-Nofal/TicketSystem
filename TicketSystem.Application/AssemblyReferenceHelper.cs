@@ -1,13 +1,11 @@
 ﻿using System.Reflection;
+using System.Reflection.Metadata;
 
 namespace TicketSystem.Application
 {
     public static class AssemblyReferenceHelper
     {
-        public static Assembly GetAssembly()
-        {
-            return Assembly.GetExecutingAssembly();
+        public static readonly Assembly Assembly = typeof(AssemblyReference).Assembly;
 
-        }
     }
 }

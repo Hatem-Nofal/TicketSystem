@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using MediatR.NotificationPublishers;
 using TicketSystem.Application.Configurations;
 using TicketSystem.WebApi.Configurations;
 
@@ -43,24 +42,19 @@ namespace TicketSystem.WebApi
             });
 
             //Configure Controllers from  Presentation
-            var presentationAssembly = Presentation.AssemblyReferenceHelper.GetAssembly();
+            var presentationAssembly = Presentation.AssemblyReferenceHelper.Assembly;
             services.AddControllers().AddApplicationPart(presentationAssembly);
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             //Configure MediatR from  Application
-            var applicationAsAmbly = Application.AssemblyReferenceHelper.GetAssembly();
+            var applicationAsAmbly = Application.AssemblyReferenceHelper.Assembly;
 
             services.AddMediatR(cfg =>
             {
+
                 cfg.RegisterServicesFromAssemblies(typeof(Startup).Assembly, applicationAsAmbly);
 
-                // Setting the publisher directly will make the instance a Singleton.
-                cfg.NotificationPublisher = new TaskWhenAllPublisher();
 
-                // Seting the publisher type will:
-                // 1. Override the value set on NotificationPublisher
-                // 2. Use the service lifetime from the ServiceLifetime property below
-                cfg.NotificationPublisherType = typeof(TaskWhenAllPublisher);
 
             });
             services.AddControllersWithViews();

@@ -3,63 +3,53 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using Newtonsoft.Json;
 using Shared.Models.Outbox;
 using TicketSystem.Domain.Common.Models;
-using TicketSystem.Domain.Common.Primitives;
 
 namespace TicketSystem.Presentation.Interceptors;
 public sealed class OutboxMessageInterceptor : SaveChangesInterceptor
 {
 
-    public override async ValueTask<InterceptionResult<int>> SavingChangesAsync(
+
+    public override ValueTask<InterceptionResult<int>> SavingChangesAsync(
        DbContextEventData eventData,
        InterceptionResult<int> result,
        CancellationToken cancellationToken = default)
     {
-        DbContext dbContext = eventData.Context;
+        DbContext? dbContext = eventData.Context;
 
-        if (dbContext is not null)
+        if (dbContext is null)
         {
-            await InsertInOutboxMessages(dbContext);
+            return base.SavingChangesAsync(eventData, result, cancellationToken);
         }
-        var res = await base.SavingChangesAsync(eventData, result, cancellationToken);
-        dbContext.ChangeTracker.Entries<BaseEntity>()
-               .Select(x => x.Entity)
-               .SelectMany(e =>
-               {
-                   List<IDomainEvent> domainEvents = e.DomainEvents.ToList();
-                   e.ClearDomainEvents();
-                   return domainEvents;
-               });
-        return res;
-    }
 
+        var outboxMessages = dbContext.ChangeTracker
+            .Entries<BaseEntity>()
+            .Select(x => x.Entity)
+            .SelectMany(aggregateRoot =>
+            {
+                var domainEvents = aggregateRoot.DomainEvents;
 
-    private static async Task InsertInOutboxMessages(DbContext dbContext)
-    {
+                aggregateRoot.ClearDomainEvents();
 
-        DateTime utcNow = DateTime.UtcNow;
-        var outboxMessages = dbContext.ChangeTracker.Entries<BaseEntity>()
-                .Select(x => x.Entity)
-                .SelectMany(e =>
-                {
-                    List<IDomainEvent> domainEvents = e.DomainEvents.ToList();
-                    return domainEvents;
-                }).Select(domainEvent => new OutboxMessage
-                {
-                    Id = Guid.NewGuid(),
-                    OccuredOnUtc = utcNow,
-                    Type = domainEvent.GetType().Name,
-                    Content = JsonConvert.SerializeObject(domainEvent
-                    , new JsonSerializerSettings
+                return domainEvents;
+            })
+            .Select(domainEvent => new OutboxMessage
+            {
+                Id = Guid.NewGuid(),
+                OccuredOnUtc = DateTime.UtcNow,
+                Type = domainEvent.GetType().Name,
+                Content = JsonConvert.SerializeObject(
+                    domainEvent,
+                    new JsonSerializerSettings
                     {
-                        TypeNameHandling = TypeNameHandling.Objects,
-                        PreserveReferencesHandling = PreserveReferencesHandling.Objects,
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-                        Formatting = Formatting.Indented
+                        TypeNameHandling = TypeNameHandling.All
+                    })
+            })
+            .ToList();
 
-                    }
-                    ),
-                })
-                .ToList();
-        await dbContext.Set<OutboxMessage>().AddRangeAsync(outboxMessages);
+        dbContext.Set<OutboxMessage>().AddRange(outboxMessages);
+
+        return base.SavingChangesAsync(eventData, result, cancellationToken);
     }
+
+
 }
