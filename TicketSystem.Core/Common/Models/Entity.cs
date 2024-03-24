@@ -1,7 +1,7 @@
 ﻿using TicketSystem.Domain.Users.ValueObjects;
 
 namespace TicketSystem.Domain.Common.Models;
-public abstract class Entity<TId> : BaseEntity, IEquatable<Entity<TId>> where TId : notnull
+public abstract class Entity<TId> : IEquatable<Entity<TId>> where TId : notnull
 {
     public Entity()
     {
@@ -13,6 +13,7 @@ public abstract class Entity<TId> : BaseEntity, IEquatable<Entity<TId>> where TI
     public DateTime? ModifiedAt { get; set; }
     public DateTime? DeletedAt { get; set; }
     public UserId? ModifierId { get; set; }
+
 
 
 

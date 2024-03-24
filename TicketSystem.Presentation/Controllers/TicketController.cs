@@ -1,19 +1,16 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using TicketSystem.Application.Tickets.Cmd;
-using TicketSystem.Presentation.BackgroundJobs;
 using TicketSystem.Presentation.Controllers.Base;
 
 namespace TicketSystem.Presentation.Controllers;
 public class TicketController : ApiControllers
 {
-    private readonly IprocessOutboxMessagesJob _iprocessOutboxMessagesJob;
 
 
 
-    public TicketController(ISender sender, IprocessOutboxMessagesJob iprocessOutboxMessagesJob) : base(sender)
+    public TicketController(ISender sender) : base(sender)
     {
-        _iprocessOutboxMessagesJob = iprocessOutboxMessagesJob;
 
     }
 
@@ -25,10 +22,5 @@ public class TicketController : ApiControllers
         return Ok();
     }
 
-    [HttpPost("api/fire")]
-    public async Task<ActionResult> fire(Guid id, CancellationToken cancellationToken = default)
-    {
-        await _iprocessOutboxMessagesJob.Execute(cancellationToken);
-        return Ok();
-    }
+
 }

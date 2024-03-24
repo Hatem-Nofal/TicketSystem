@@ -13,7 +13,8 @@ internal sealed class TicketCreatedCommendHandler : IRequestHandler<TicketCreate
         _unitOfWork = unitOfWork;
     }
 
-    public async Task Handle(TicketCreatedCommend request, CancellationToken cancellationToken)
+
+    async Task<Unit> IRequestHandler<TicketCreatedCommend, Unit>.Handle(TicketCreatedCommend request, CancellationToken cancellationToken)
     {
         var ticket = Ticket.Create(request.title, request.status, UserId.Create(request.assingTo), request.describtion, request.originalEstimate, request.severity);
 
@@ -22,6 +23,8 @@ internal sealed class TicketCreatedCommendHandler : IRequestHandler<TicketCreate
             _unitOfWork.Repository<Ticket>().Add(ticket);
 
             await _unitOfWork.CommitAsync();
+
+            return Unit.Value;
 
         }
         catch (Exception e)

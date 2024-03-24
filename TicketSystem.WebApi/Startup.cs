@@ -1,5 +1,7 @@
 ﻿using MediatR;
+using Quartz;
 using TicketSystem.Application.Configurations;
+using TicketSystem.Infrastructure.BackgroundJobs;
 using TicketSystem.WebApi.Configurations;
 
 namespace TicketSystem.WebApi
@@ -42,21 +44,12 @@ namespace TicketSystem.WebApi
             });
 
             //Configure Controllers from  Presentation
-            var presentationAssembly = Presentation.AssemblyReferenceHelper.Assembly;
-            services.AddControllers().AddApplicationPart(presentationAssembly);
+            services.AddControllers().AddApplicationPart(Presentation.AssemblyReferenceHelper.Assembly);
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             //Configure MediatR from  Application
-            var applicationAsAmbly = Application.AssemblyReferenceHelper.Assembly;
+            services.AddMediatR(Application.AssemblyReferenceHelper.Assembly);
 
-            services.AddMediatR(cfg =>
-            {
-
-                cfg.RegisterServicesFromAssemblies(typeof(Startup).Assembly, applicationAsAmbly);
-
-
-
-            });
             services.AddControllersWithViews();
 
             //DependencyInjectionConfiguration
@@ -65,6 +58,25 @@ namespace TicketSystem.WebApi
             // Swagger Config
             services.AddSwaggerConfigurationIdentityServer(_configuration);
             services.AddDatabaseConfiguration(_configuration);
+
+            services.AddQuartz(configure =>
+            {
+                var jobKey = new JobKey(nameof(ProcessOutboxMessagesJob));
+
+                configure
+                    .AddJob<ProcessOutboxMessagesJob>(jobKey)
+                    .AddTrigger(
+                        trigger =>
+                            trigger.ForJob(jobKey)
+                                .WithSimpleSchedule(
+                                    schedule =>
+                                        schedule.WithIntervalInSeconds(10)
+                                            .RepeatForever()));
+
+                configure.UseMicrosoftDependencyInjectionJobFactory();
+            });
+
+            services.AddQuartzHostedService();
 
         }
 
@@ -77,6 +89,10 @@ namespace TicketSystem.WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseHttpsRedirection();
+
+
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
