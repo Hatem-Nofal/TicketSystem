@@ -29,8 +29,8 @@ namespace TicketSystem.WebApi.Configurations
             {
                 c.CustomSchemaIds(type => SwashbuckleSchemaHelper.GetSchemaId(type));
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TicketSystem.WebAPI", Version = "v1" });
-             
-             
+
+
             });
         }
         public static void AddSwaggerConfigurationJWT(this IServiceCollection services, IConfiguration _configuration)
@@ -48,7 +48,7 @@ namespace TicketSystem.WebApi.Configurations
                     Contact = new OpenApiContact { Name = "Eduardo Pires", Email = "contato@eduardopires.net.br", Url = new Uri("http://www.eduardopires.net.br") },
                     License = new OpenApiLicense { Name = "MIT", Url = new Uri("https://github.com/EduardoPires/MerchantProject/blob/master/LICENSE") }
                 });
- 
+
 
             });
         }
@@ -72,9 +72,9 @@ namespace TicketSystem.WebApi.Configurations
                 app.UseSwaggerUI(options =>
                 {
                     options.SwaggerEndpoint("/swagger/v1/swagger.json", "TicketSystem.WebAPI v1");
-           
-                  
-              
+
+
+
                 });
             }
             else
@@ -82,7 +82,7 @@ namespace TicketSystem.WebApi.Configurations
                 app.UseSwaggerUI(options =>
                 {
                     options.SwaggerEndpoint("/swagger/v1/swagger.json", "TicketSystem.WebAPI v1");
-          
+
                 });
             }
 

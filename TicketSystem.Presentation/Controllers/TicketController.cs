@@ -21,6 +21,13 @@ public class TicketController : ApiControllers
 
         return Ok();
     }
+    [HttpPut("api/CreateTicket")]
+    public async Task<ActionResult> UpdateTicket(TicketCreatedCommend request, CancellationToken cancellationToken = default)
+    {
+        await _sender.Send(request);
+
+        return Ok();
+    }
 
 
 }
