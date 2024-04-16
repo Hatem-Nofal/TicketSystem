@@ -43,7 +43,7 @@ public class ProcessOutboxMessagesJob : IJob
                 continue;
             }
 
-            var xx = _publisher.Publish(domainEvent, context.CancellationToken).Status;
+            await _publisher.Publish(domainEvent, context.CancellationToken);
 
             outboxMessage.ProcessedOnUtc = DateTime.UtcNow;
         }
