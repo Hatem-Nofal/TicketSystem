@@ -1,12 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
+﻿using Gatherly.Domain.Shared;
+using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using TicketSystem.Domain.Common.Helpers;
 using TicketSystem.Domain.Common.Helpers.Errors.ValueObjects;
 
 namespace TicketSystem.Domain.Common.Models.ValueObjects;

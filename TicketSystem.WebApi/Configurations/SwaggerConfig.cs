@@ -67,24 +67,13 @@ namespace TicketSystem.WebApi.Configurations
         {
             if (app == null) throw new ArgumentNullException(nameof(app));
             app.UseSwagger();
-            if ((env.IsProduction() || env.EnvironmentName == "DebugProduction" || env.EnvironmentName == "Development"))
+
+            app.UseSwaggerUI(options =>
             {
-                app.UseSwaggerUI(options =>
-                {
-                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "TicketSystem.WebAPI v1");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "TicketSystem.WebAPI v1");
 
+            });
 
-
-                });
-            }
-            else
-            {
-                app.UseSwaggerUI(options =>
-                {
-                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "TicketSystem.WebAPI v1");
-
-                });
-            }
 
         }
     }

@@ -48,6 +48,8 @@ namespace TicketSystem.WebApi
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             //Configure MediatR from  Application
+            //services.AddMediatR(Application.AssemblyReferenceHelper.Assembly);
+            //services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
             services.AddMediatR(Application.AssemblyReferenceHelper.Assembly);
 
             services.AddControllersWithViews();

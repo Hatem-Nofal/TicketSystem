@@ -1,10 +1,11 @@
-﻿using MediatR;
+﻿using Gatherly.Domain.Shared;
 using TicketSystem.Application.Interfaces.Base;
 using TicketSystem.Domain.Tickets;
+using TicketSystem.Domain.Tickets.ValueObjects;
 using TicketSystem.Domain.Users.ValueObjects;
 
 namespace TicketSystem.Application.Tickets.Cmd;
-internal sealed class TicketCreatedCommendHandler : IRequestHandler<TicketCreatedCommend>
+internal sealed class TicketCreatedCommendHandler : ICommandHandler<TicketCreatedCommend, TicketId>
 {
     private readonly IUnitOfWork _unitOfWork;
 
@@ -13,8 +14,7 @@ internal sealed class TicketCreatedCommendHandler : IRequestHandler<TicketCreate
         _unitOfWork = unitOfWork;
     }
 
-
-    async Task<Unit> IRequestHandler<TicketCreatedCommend, Unit>.Handle(TicketCreatedCommend request, CancellationToken cancellationToken)
+    public async Task<Result<TicketId>> Handle(TicketCreatedCommend request, CancellationToken cancellationToken)
     {
         var ticket = Ticket.Create(request.title, request.status, UserId.Create(request.assingTo), request.describtion, request.originalEstimate, request.severity);
 
@@ -24,7 +24,7 @@ internal sealed class TicketCreatedCommendHandler : IRequestHandler<TicketCreate
 
             await _unitOfWork.CommitAsync();
 
-            return Unit.Value;
+            return ticket.Id;
 
         }
         catch (Exception e)

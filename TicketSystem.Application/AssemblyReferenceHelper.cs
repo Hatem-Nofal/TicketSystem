@@ -7,5 +7,6 @@ namespace TicketSystem.Application
     {
         public static readonly Assembly Assembly = typeof(AssemblyReference).Assembly;
 
+
     }
 }
