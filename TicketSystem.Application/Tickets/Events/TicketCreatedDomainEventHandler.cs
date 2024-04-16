@@ -1,4 +1,4 @@
-﻿using TicketSystem.Domain.Common.Primitives;
+﻿using TicketSystem.Application.Interfaces.Base;
 using TicketSystem.Domain.Tickets.Events;
 
 namespace TicketSystem.Application.Tickets.Events;

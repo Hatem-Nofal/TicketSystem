@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="10.0.1" />
     <PackageReference Include="MediatR.Contracts" Version="1.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="7.0.14" />
     <PackageReference Include="SequentialGuid" Version="4.0.4" />
