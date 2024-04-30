@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
 using System.Collections;
-using TicketSystem.Application.Interfaces.Base;
+using TicketSystem.Application.Core.Base;
 using TicketSystem.Domain.Common.Models;
 using TicketSystem.Infrastructure.Context;
 

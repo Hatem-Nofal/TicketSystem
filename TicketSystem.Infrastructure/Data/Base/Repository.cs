@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using TicketSystem.Application.Interfaces.Base;
+using TicketSystem.Application.Core.Base;
 using TicketSystem.Domain.Common.Models;
 namespace TicketSystem.Infrastructure.Data.Base;
 public class Repository<T> : IRepository<T> where T : BaseEntity

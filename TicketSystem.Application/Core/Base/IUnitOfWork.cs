@@ -1,7 +1,6 @@
-﻿
-using TicketSystem.Domain.Common.Models;
+﻿using TicketSystem.Domain.Common.Models;
 
-namespace TicketSystem.Application.Interfaces.Base;
+namespace TicketSystem.Application.Core.Base;
 public interface IUnitOfWork : IDisposable
 {
     IRepository<TEntity> Repository<TEntity>() where TEntity : BaseEntity;

@@ -1,8 +1,9 @@
-﻿using TicketSystem.Application.Interfaces.Base;
+﻿using TicketSystem.Application.Core.Messaging;
 using TicketSystem.Domain.Tickets.Events;
 
 namespace TicketSystem.Application.Tickets.Events;
-internal sealed class TicketCreatedDomainEventHandler : IDomainEventHandler<TicketCreatedDomainEvent>
+internal sealed class TicketCreatedDomainEventHandler
+    : IEventHandler<TicketCreatedDomainEvent>
 {
 
     public TicketCreatedDomainEventHandler()

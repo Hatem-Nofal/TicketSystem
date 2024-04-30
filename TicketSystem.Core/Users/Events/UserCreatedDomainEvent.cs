@@ -2,5 +2,5 @@
 using TicketSystem.Domain.Users.ValueObjects;
 
 namespace TicketSystem.Domain.Users.Events;
-public record UserCreatedDomainEvent(Guid Id, UserId UserId) : IDomainEvent;
+public record UserCreatedDomainEvent(Guid Id, UserId UserId) : IEvent;
 

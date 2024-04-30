@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TicketSystem.Application.Interfaces.Base;
+using TicketSystem.Application.Core.Base;
 using TicketSystem.Infrastructure.Data.Base;
 namespace TicketSystem.Infrastructure.IoC
 {
