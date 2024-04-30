@@ -1,5 +1,5 @@
 ﻿using System.Linq.Expressions;
-using TicketSystem.Domain.Common.Models;
+using TicketSystem.Domain.Primitives;
 
 namespace TicketSystem.Application.Interfaces.Base;
 public interface IRepository<T> where T : BaseEntity

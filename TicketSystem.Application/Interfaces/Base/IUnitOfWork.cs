@@ -1,5 +1,4 @@
-﻿
-using TicketSystem.Domain.Common.Models;
+﻿using TicketSystem.Domain.Primitives;
 
 namespace TicketSystem.Application.Interfaces.Base;
 public interface IUnitOfWork : IDisposable

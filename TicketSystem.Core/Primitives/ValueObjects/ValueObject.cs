@@ -1,4 +1,4 @@
-﻿namespace TicketSystem.Domain.Common.Models.ValueObjects;
+﻿namespace TicketSystem.Domain.Primitives.ValueObjects;
 public abstract class ValueObject : IEquatable<ValueObject>
 {
     public abstract IEnumerable<object> GetEqualityComponents();

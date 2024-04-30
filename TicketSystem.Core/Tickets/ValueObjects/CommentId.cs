@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using TicketSystem.Domain.Common.Models.ValueObjects;
+using TicketSystem.Domain.Primitives.ValueObjects;
 
 namespace TicketSystem.Domain.Tickets.ValueObjects;
 [ComplexType]

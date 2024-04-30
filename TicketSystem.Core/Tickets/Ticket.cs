@@ -1,4 +1,4 @@
-﻿using TicketSystem.Domain.Common.Models;
+﻿using TicketSystem.Domain.Primitives;
 using TicketSystem.Domain.Tickets.Entities;
 using TicketSystem.Domain.Tickets.Enums;
 using TicketSystem.Domain.Tickets.Events;

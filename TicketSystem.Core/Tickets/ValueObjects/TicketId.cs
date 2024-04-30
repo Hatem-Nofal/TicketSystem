@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TicketSystem.Domain.Common.Models.ValueObjects;
+using TicketSystem.Domain.Primitives.ValueObjects;
 using TicketSystem.Domain.Users.ValueObjects;
 
 namespace TicketSystem.Domain.Tickets.ValueObjects;

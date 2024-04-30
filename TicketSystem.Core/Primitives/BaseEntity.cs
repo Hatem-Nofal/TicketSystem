@@ -1,6 +1,6 @@
 ﻿using TicketSystem.Domain.Common.Primitives;
 
-namespace TicketSystem.Domain.Common.Models;
+namespace TicketSystem.Domain.Primitives;
 
 public abstract class BaseEntity
 {

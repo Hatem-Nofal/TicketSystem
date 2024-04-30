@@ -1,4 +1,4 @@
-﻿using TicketSystem.Domain.Common.Models;
+﻿using TicketSystem.Domain.Primitives;
 using TicketSystem.Domain.Tickets.Events;
 using TicketSystem.Domain.Tickets.ValueObjects;
 using TicketSystem.Domain.Users.ValueObjects;

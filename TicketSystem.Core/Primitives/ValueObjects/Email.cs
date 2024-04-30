@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
 using TicketSystem.Domain.Common.Helpers.Errors.ValueObjects;
 
-namespace TicketSystem.Domain.Common.Models.ValueObjects;
+namespace TicketSystem.Domain.Primitives.ValueObjects;
 [Owned]
 public sealed record Email
 {

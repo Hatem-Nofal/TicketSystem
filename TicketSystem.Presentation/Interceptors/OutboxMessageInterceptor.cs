@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Newtonsoft.Json;
 using Shared.Models.Outbox;
-using TicketSystem.Domain.Common.Models;
+using TicketSystem.Domain.Primitives;
 
 namespace TicketSystem.Presentation.Interceptors;
 public sealed class OutboxMessageInterceptor : SaveChangesInterceptor

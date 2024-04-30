@@ -1,6 +1,6 @@
 ﻿using TicketSystem.Domain.Users.ValueObjects;
 
-namespace TicketSystem.Domain.Common.Models;
+namespace TicketSystem.Domain.Primitives;
 public abstract class Entity<TId> : BaseEntity, IEquatable<Entity<TId>> where TId : notnull
 {
     public Entity()
