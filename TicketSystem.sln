@@ -45,7 +45,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TicketSystem.IntegrationEve
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketSystem.IntegrationEvents", "TicketSystem.IntegrationEvents\TicketSystem.IntegrationEvents.csproj", "{989AC247-38DC-4E63-B5A3-BE9822CC747D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{75AF33D9-3348-4497-9A8E-55FF783F76FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{75AF33D9-3348-4497-9A8E-55FF783F76FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketSystem.Identity", "TicketSystem.Identity\TicketSystem.Identity.csproj", "{5239D48A-3EB4-4844-812C-1D70B2F44F58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +99,10 @@ Global
 		{75AF33D9-3348-4497-9A8E-55FF783F76FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75AF33D9-3348-4497-9A8E-55FF783F76FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75AF33D9-3348-4497-9A8E-55FF783F76FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5239D48A-3EB4-4844-812C-1D70B2F44F58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5239D48A-3EB4-4844-812C-1D70B2F44F58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5239D48A-3EB4-4844-812C-1D70B2F44F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5239D48A-3EB4-4844-812C-1D70B2F44F58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +120,7 @@ Global
 		{73F91C25-BB0B-4F7E-948F-3E1BF08EE487} = {E762C8BA-5B6B-4BD6-80E1-872CA1804F69}
 		{989AC247-38DC-4E63-B5A3-BE9822CC747D} = {74130B9F-D769-4F1C-9D74-8D903C0AD684}
 		{75AF33D9-3348-4497-9A8E-55FF783F76FB} = {1B8498B8-F7BE-4F97-8D2B-1B1A064561DA}
+		{5239D48A-3EB4-4844-812C-1D70B2F44F58} = {2E118EC6-B973-4DE5-AEF0-A4625060A4AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79405B5B-6FC8-4DBA-BA82-F3EDBE3713E7}

@@ -1,13 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Server.Data;
-using Server;
+﻿using IdentityServer4.EntityFramework.DbContexts;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Server;
 using Server.Data;
-using static System.Net.Mime.MediaTypeNames;
-using IdentityServer4.EntityFramework.DbContexts;
 
 
 
@@ -43,7 +39,7 @@ public class Startup
         SeedData.EnsureSeedData(defaultConnString!);
         var assembly = typeof(Program).Assembly.GetName().Name;
         services.AddDbContext<ConfigurationDbContext>(options =>
-options.UseSqlServer(defaultConnString,
+        options.UseSqlServer(defaultConnString,
                 b => b.MigrationsAssembly(assembly)));
         services.AddDbContext<AspNetIdentityDbContext>(options =>
             options.UseSqlServer(defaultConnString,
@@ -65,7 +61,16 @@ options.UseSqlServer(defaultConnString,
                 b.UseSqlServer(defaultConnString, opt => opt.MigrationsAssembly(assembly));
             })
             .AddDeveloperSigningCredential();
+        services.AddAuthentication("Bearer")
+            .AddJwtBearer("Bearer", options =>
+            {
+                options.Authority = "https://localhost:7256";
 
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateAudience = false
+                };
+            });
         services.AddControllersWithViews();
 
 
@@ -77,12 +82,14 @@ options.UseSqlServer(defaultConnString,
         app.UseStaticFiles();
         app.UseRouting();
         app.UseIdentityServer();
+        app.UseAuthentication();
         app.UseAuthorization();
+
         app.UseEndpoints(endpoints =>
         {
-            endpoints.MapDefaultControllerRoute();
+            endpoints.MapControllers();
         });
-     
+
 
     }
 

@@ -21,7 +21,7 @@ public sealed class OutboxMessageInterceptor : SaveChangesInterceptor
             return base.SavingChangesAsync(eventData, result, cancellationToken);
         }
 
-        var outboxMessages = dbContext.ChangeTracker
+            var outboxMessages = dbContext.ChangeTracker
             .Entries<BaseEntity>()
             .Select(x => x.Entity)
             .SelectMany(aggregateRoot =>
